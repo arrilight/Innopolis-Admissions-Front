@@ -5,9 +5,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from './components/shared.module';
 
-import { NbThemeModule } from '@nebular/theme';
-import {LoginPageModule} from './pages/login-page/login-page.module';
-import {CandidatePageModule} from './pages/candidate-page/candidate-page.module';
+import { NbLayoutModule, NbThemeModule } from '@nebular/theme';
+import { LoginPageModule } from './pages/login-page/login-page.module';
+import { CandidatePageModule } from './pages/candidate-page/candidate-page.module';
 
 @NgModule({
   declarations: [
@@ -19,7 +19,8 @@ import {CandidatePageModule} from './pages/candidate-page/candidate-page.module'
     CandidatePageModule,
     LoginPageModule,
     SharedModule,
-    NbThemeModule.forRoot()
+    NbThemeModule.forRoot(),
+    NbLayoutModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

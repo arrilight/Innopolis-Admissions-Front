@@ -9,10 +9,10 @@ import {Router} from '@angular/router';
 })
 export class LoginPageComponent implements OnInit {
 
-  // public registrationForm = new FormGroup({
-  //   name: new FormControl('', Validators.required),
-  //   surname: new FormControl('', Validators.required)
-  // });
+  public registrationForm = new FormGroup({
+    name: new FormControl('', Validators.required),
+    surname: new FormControl('', Validators.required)
+  });
 
   constructor(  private router: Router) {}
 

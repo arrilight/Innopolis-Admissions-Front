@@ -1,0 +1,19 @@
+.login-card {
+  width: 600px;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.title {
+  text-align: center;
+}
+
+.field {
+  margin-top: 12px;
+}
+
+.program-dropdown {
+  width: 300px;
+}
