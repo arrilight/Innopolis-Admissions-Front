@@ -6,6 +6,7 @@ import {
     NbContextMenuModule,
     NbSidebarService,
     NbMenuModule,
+    NbSelectModule,
 } from "@nebular/theme";
 import { NgModule } from "@angular/core";
 import { ManagerPageComponent } from "./manager-page.component";
@@ -23,6 +24,7 @@ import { CommonModule } from "@angular/common";
         NbContextMenuModule,
         SharedModule,
         CommonModule,
+        NbSelectModule,
     ],
     providers: [NbSidebarService], // we need this service for the sidebar
 })

@@ -31,7 +31,7 @@ export class CandidatePageComponent implements OnInit {
         },
     ];
 
-    currentSubPage = "Documents";
+    currentSubPage = "Profile information";
 
     constructor() {}
 

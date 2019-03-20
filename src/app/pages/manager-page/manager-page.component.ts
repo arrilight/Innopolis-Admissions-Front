@@ -15,24 +15,23 @@ export class ManagerPageComponent implements OnInit {
 
     menuList: NbMenuItem[] = [
         {
-            icon: "fas fa-file-invoice",
-            title: "Candidates",
+            icon: "fas fa-users",
+            title: "  Candidates",
             link: "",
         },
         {
             icon: "fas far fa-edit",
-            title: "Tests",
+            title: "  Tests",
             link: "",
         },
         {
-            icon: "fas fa-user",
-            title: "Professors",
+            icon: "fas fa-graduation-cap",
+            title: "  Professors",
             link: "",
         },
     ];
-    ß;
 
-    currentSubPage = "Documents";
+    currentSubPage = "Profile information";
 
     constructor() {}
 
