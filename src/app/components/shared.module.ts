@@ -4,10 +4,12 @@ import {UserSidebarComponent} from './user-sidebar/user-sidebar.component';
 import {NbCardModule, NbLayoutModule, NbListModule, NbMenuModule, NbSidebarModule, NbUserModule} from '@nebular/theme';
 import { DocumentsComponentComponent } from './dumb/documents-component/documents-component.component';
 import {NbInputModule} from '@nebular/theme';
+import { CandidateTestsComponent } from './dumb/candidate-tests/candidate-tests.component';
 
 @NgModule({
   declarations: [UserSidebarComponent,
-    DocumentsComponentComponent
+    DocumentsComponentComponent,
+    CandidateTestsComponent
   ],
   imports: [
     CommonModule,
@@ -21,9 +23,10 @@ import {NbInputModule} from '@nebular/theme';
     NbInputModule
   ],
   exports: [UserSidebarComponent,
-    DocumentsComponentComponent
+    DocumentsComponentComponent,
+    CandidateTestsComponent
   ]
 })
 
-export class SharedModule {
-}
+export class SharedModule {}
+
