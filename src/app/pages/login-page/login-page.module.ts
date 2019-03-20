@@ -11,15 +11,17 @@ import {
 import {NgModule} from '@angular/core';
 import {LoginPageComponent} from './login-page.component';
 import {ReactiveFormsModule} from '@angular/forms';
+import {SharedModule} from '../../components/shared.module';
 
 @NgModule({
   declarations: [
-    LoginPageComponent
+    LoginPageComponent,
   ],
     imports: [
-  RouterModule, // RouterModule.forRoot(routes, { useHash: true }), if this is your app.module
-  NbLayoutModule,
-  NbSidebarModule,
+      SharedModule,
+      RouterModule, // RouterModule.forRoot(routes, { useHash: true }), if this is your app.module
+      NbLayoutModule,
+      NbSidebarModule,
       NbButtonModule,
       NbCardModule,
       NbTabsetModule,

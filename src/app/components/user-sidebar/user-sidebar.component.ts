@@ -7,30 +7,16 @@ import { NbMenuItem, NbMenuService } from "@nebular/theme";
     styleUrls: ["./user-sidebar.component.css"],
 })
 export class UserSidebarComponent implements OnInit {
-    items: NbMenuItem[];
     @Output() chosen = new EventEmitter<string>();
+    @Input() progress: number;
+    @Input() name: string;
+    @Input() status: string;
+    @Input() menuList: NbMenuItem[];
 
     constructor(menu: NbMenuService) {
         menu.onItemClick().subscribe(({ item }) => {
             this.chosen.emit(item.title);
         });
-        this.items = [
-            {
-                icon: "fas fa-file-invoice",
-                title: "Profile information",
-                link: "",
-            },
-            {
-                icon: "fas far fa-edit",
-                title: "Tests",
-                link: "",
-            },
-            {
-                icon: "fas fa-user",
-                title: "Interviews",
-                link: "",
-            },
-        ];
     }
 
     ngOnInit() {}
