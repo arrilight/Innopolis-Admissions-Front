@@ -1,3 +1,12 @@
-<p>
-  candidate-page works!
-</p>
+<nb-layout>
+  <nb-layout-header>
+    Logo
+    <button nbButton outline status="primary" size="small" [nbContextMenu]="items" nbContextMenuPlacement="right" nbContextMenuTrigger="click" class="notification">
+      Notifications
+      <!--<img alt='notifications' class="notification" src="../../../assets/bell-outline.svg"/>-->
+    </button>
+  </nb-layout-header>
+  <nb-layout-column></nb-layout-column>
+  <nb-sidebar></nb-sidebar>
+</nb-layout>
+

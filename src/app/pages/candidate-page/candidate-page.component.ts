@@ -7,6 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CandidatePageComponent implements OnInit {
 
+  items = [
+    { title: 'Notification 1' },
+    { title: 'A looooong text of a notification' },
+    { title: 'Notification 2' },
+  ];
+
   constructor() { }
 
   ngOnInit() {
