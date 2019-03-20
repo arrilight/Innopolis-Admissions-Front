@@ -4,6 +4,7 @@ import {NgModule} from '@angular/core';
 import {CandidatePageComponent} from './candidate-page.component';
 import {UserSidebarComponent} from '../../components/user-sidebar/user-sidebar.component';
 import {SharedModule} from '../../components/shared.module';
+import {CommonModule} from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import {SharedModule} from '../../components/shared.module';
     NbMenuModule.forRoot(),
     NbButtonModule,
     NbContextMenuModule,
-    SharedModule
+    SharedModule,
+    CommonModule
   ],
   providers: [NbSidebarService], // we need this service for the sidebar
 })

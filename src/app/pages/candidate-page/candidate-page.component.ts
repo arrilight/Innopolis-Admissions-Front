@@ -13,9 +13,17 @@ export class CandidatePageComponent implements OnInit {
     { title: 'Notification 2' },
   ];
 
+  currentSubPage = 'Documents';
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+
+
+  setSubPage(name: string) {
+    this.currentSubPage = name;
   }
 
 }

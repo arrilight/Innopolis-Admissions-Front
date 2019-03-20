@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {NbMenuItem} from '@nebular/theme';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {NbMenuItem, NbMenuService} from '@nebular/theme';
 
 @Component({
   selector: 'app-user-sidebar',
@@ -9,8 +9,12 @@ import {NbMenuItem} from '@nebular/theme';
 export class UserSidebarComponent implements OnInit {
 
   items: NbMenuItem[];
+  @Output() chosen = new EventEmitter<string>();
 
-  constructor() {
+  constructor(menu: NbMenuService) {
+    menu.onItemClick().subscribe(({item}) => {
+      this.chosen.emit(item.title);
+    });
     this.items = [
       {
         icon: 'fas fa-file-invoice',

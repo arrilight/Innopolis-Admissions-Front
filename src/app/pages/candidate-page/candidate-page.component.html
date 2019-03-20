@@ -7,10 +7,16 @@
     </button>
   </nb-layout-header>
   <nb-layout-column>
-    <app-candidate-tests></app-candidate-tests>
+    <div *ngIf="currentSubPage === 'Documents'"><app-documents-component></app-documents-component></div>
+    <div *ngIf="currentSubPage === 'Tests'"><app-candidate-tests></app-candidate-tests></div>
+    <div *ngIf="currentSubPage === 'Interviews'"><app-candidate-tests></app-candidate-tests></div>
+
+
   </nb-layout-column>
   <nb-sidebar>
-    <app-user-sidebar></app-user-sidebar>
+    <app-user-sidebar
+      (chosen)="setSubPage($event)"
+    ></app-user-sidebar>
   </nb-sidebar>
 </nb-layout>
 
