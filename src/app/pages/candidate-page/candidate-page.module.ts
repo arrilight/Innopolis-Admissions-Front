@@ -1,8 +1,9 @@
 import { RouterModule } from '@angular/router'; // we also need angular router for Nebular to function properly
-import {NbSidebarModule, NbLayoutModule, NbSidebarService, NbButtonModule, NbCardModule} from '@nebular/theme';
+import {NbSidebarModule, NbLayoutModule, NbSidebarService, NbMenuModule, NbButtonModule, NbContextMenuModule} from '@nebular/theme';
 import {NgModule} from '@angular/core';
 import {CandidatePageComponent} from './candidate-page.component';
 import {SharedModule} from '../../components/shared.module';
+import {CommonModule} from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,11 @@ import {SharedModule} from '../../components/shared.module';
     RouterModule, // RouterModule.forRoot(routes, { useHash: true }), if this is your app.module
     SharedModule,
     NbLayoutModule,
-    NbSidebarModule
+    NbSidebarModule,
+    NbMenuModule.forRoot(),
+    NbButtonModule,
+    NbContextMenuModule,
+    CommonModule
   ],
   providers: [NbSidebarService], // we need this service for the sidebar
 })

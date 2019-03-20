@@ -1,0 +1,20 @@
+<div class="container">
+    <h3>Profile info</h3>
+    <input nbInput type="text" placeholder="Name" />
+    <input nbInput type="text" placeholder="Surname" />
+    <input nbInput type="email" placeholder="Email" />
+    <input nbInput type="tel" placeholder="Telephone number" />
+    <nb-select class="select" placeholder="Select Program" [(selected)]="selectedItem">
+        <nb-option value="1">Bachelor</nb-option>
+        <nb-option value="2">Masters</nb-option>
+    </nb-select>
+    <input nbInput type="text" placeholder="Country of studentship" />
+
+    <div>
+        <h4>Documents</h4>
+        <p>CV File</p>
+        <input nbInput type="file" placeholder="Choose CV" />
+        <p>Motivation letter File</p>
+        <input nbInput type="file" placeholder="Choose letter" />
+    </div>
+</div>
