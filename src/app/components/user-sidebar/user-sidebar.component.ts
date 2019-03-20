@@ -17,7 +17,7 @@ export class UserSidebarComponent implements OnInit {
         this.items = [
             {
                 icon: "fas fa-file-invoice",
-                title: "Documents",
+                title: "Profile information",
                 link: "",
             },
             {
