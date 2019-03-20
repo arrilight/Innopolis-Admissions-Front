@@ -1,17 +1,16 @@
 .container {
-  display: flex;
-  flex-flow: column;
-  margin: 20px;
-  align-items: center;
+    display: flex;
+    flex-flow: column;
+    margin: 20px;
+    align-items: center;
 }
 
 input {
-  margin: 10px 0;
-  width: 300px;
+    margin: 10px 0;
+    width: 300px;
 }
 
 .select {
-  margin: 10px 0;
-  width: 300px;
+    margin: 10px 0;
+    width: 300px;
 }
-

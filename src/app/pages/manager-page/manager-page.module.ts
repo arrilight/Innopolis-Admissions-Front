@@ -8,12 +8,12 @@ import {
     NbMenuModule,
 } from "@nebular/theme";
 import { NgModule } from "@angular/core";
-import { CandidatePageComponent } from "./candidate-page.component";
+import { ManagerPageComponent } from "./manager-page.component";
 import { SharedModule } from "../../components/shared.module";
 import { CommonModule } from "@angular/common";
 
 @NgModule({
-    declarations: [CandidatePageComponent],
+    declarations: [ManagerPageComponent],
     imports: [
         RouterModule, // RouterModule.forRoot(routes, { useHash: true }), if this is your app.module
         NbLayoutModule,
@@ -26,4 +26,4 @@ import { CommonModule } from "@angular/common";
     ],
     providers: [NbSidebarService], // we need this service for the sidebar
 })
-export class CandidatePageModule {}
+export class ManagerPageModule {}

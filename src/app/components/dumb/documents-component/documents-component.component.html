@@ -4,7 +4,11 @@
     <input nbInput type="text" placeholder="Surname" />
     <input nbInput type="email" placeholder="Email" />
     <input nbInput type="tel" placeholder="Telephone number" />
-    <nb-select class="select" placeholder="Select Program" [(selected)]="selectedItem">
+    <nb-select
+        class="select"
+        placeholder="Select Program"
+        [(selected)]="selectedItem"
+    >
         <nb-option value="1">Bachelor</nb-option>
         <nb-option value="2">Masters</nb-option>
     </nb-select>

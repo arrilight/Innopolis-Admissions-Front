@@ -1,13 +1,11 @@
-<nb-user size="xlarge"
-         name="John Doe"
-         title="Pending test invitation"
-         color="#cccccc">>
+<nb-user size="xlarge" name="{{ name }}" title="{{ status }}" color="#cccccc"
+    >>
 </nb-user>
-<nb-progress-bar  class="progressbar" [value]="60" status="success">60% complete</nb-progress-bar>
-
+<div *ngIf="progress">
+    <nb-progress-bar class="progressbar" [value]="progress" status="success"
+        >60% complete</nb-progress-bar
+    >
+</div>
 <div class="space"></div>
 
-
-
-<nb-menu [items]="items">
-</nb-menu>
+<nb-menu [items]="menuList"> </nb-menu>

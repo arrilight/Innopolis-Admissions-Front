@@ -1,19 +1,19 @@
 import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { CandidatePageComponent } from "./candidate-page.component";
+import { ManagerPageComponent } from "./manager-page.component";
 
 describe("ManagerPageComponent", () => {
-    let component: CandidatePageComponent;
-    let fixture: ComponentFixture<CandidatePageComponent>;
+    let component: ManagerPageComponent;
+    let fixture: ComponentFixture<ManagerPageComponent>;
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
-            declarations: [CandidatePageComponent],
+            declarations: [ManagerPageComponent],
         }).compileComponents();
     }));
 
     beforeEach(() => {
-        fixture = TestBed.createComponent(CandidatePageComponent);
+        fixture = TestBed.createComponent(ManagerPageComponent);
         component = fixture.componentInstance;
         fixture.detectChanges();
     });

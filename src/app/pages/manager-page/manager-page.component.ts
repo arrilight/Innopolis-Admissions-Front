@@ -2,11 +2,11 @@ import { Component, OnInit } from "@angular/core";
 import { NbMenuItem } from "@nebular/theme";
 
 @Component({
-    selector: "app-candidate-page",
-    templateUrl: "./candidate-page.component.html",
-    styleUrls: ["./candidate-page.component.css"],
+    selector: "app-manager-page",
+    templateUrl: "./manager-page.component.html",
+    styleUrls: ["./manager-page.component.css"],
 })
-export class CandidatePageComponent implements OnInit {
+export class ManagerPageComponent implements OnInit {
     items = [
         { title: "Notification 1" },
         { title: "A looooong text of a notification" },
@@ -16,7 +16,7 @@ export class CandidatePageComponent implements OnInit {
     menuList: NbMenuItem[] = [
         {
             icon: "fas fa-file-invoice",
-            title: "Profile information",
+            title: "Candidates",
             link: "",
         },
         {
@@ -26,10 +26,11 @@ export class CandidatePageComponent implements OnInit {
         },
         {
             icon: "fas fa-user",
-            title: "Interviews",
+            title: "Professors",
             link: "",
         },
     ];
+    ß;
 
     currentSubPage = "Documents";
 
