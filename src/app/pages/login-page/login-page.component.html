@@ -1,24 +1,74 @@
-<!--<nb-layout>-->
-
-  <!--<app-user-sidebar></app-user-sidebar>-->
-  <!--<nb-layout-header fixed>Company Name</nb-layout-header>-->
-
-
-
-  <!--<nb-layout-column>-->
-   <!--<p>-->
-        <!--login-page-->
-      <!--</p>-->
-      <!--<div>-->
-        <!--&lt;!&ndash;<form [formGroup]="registrationForm">&ndash;&gt;-->
-        <!--<form>-->
-          <!--<input formControlName="name" type="text" class="form-control" placeholder="Name" >-->
-          <!--<input formControlName="surname" type="text" class="form-control" placeholder="Surname" >-->
-        <!--</form>-->
-        <!--<div class="footer text-center">-->
-          <!--<button (click)="submitForm()" href="#pablo" class="btn btn-neutral btn-round btn-lg">Get Started</button>-->
-        <!--</div>-->
-      <!--</div>-->
-  <!--</nb-layout-column>-->
-<!--</nb-layout>-->
-<i class="eva eva-github"></i>
+<nb-layout>
+  <nb-layout-column>
+    <form [formGroup]="registrationForm">
+    <nb-card class="login-card">
+      <nb-card-body>
+        <nb-tabset>
+          <nb-tab tabTitle="Login">
+            <div>
+                <h1 class="title">Sign In</h1>
+              <div class="field">
+                <label class="label">Email address:</label>
+                <input nbInput fullWidth formControlName="name" type="text" placeholder="E-mail" >
+              </div>
+              <div class="field">
+                <label class="label">Password:</label>
+                <input nbInput  type="password" fullWidth formControlName="surname" placeholder="Password" >
+              </div>
+                <button nbButton  href="#pablo"  (click)="submitForm()" class="field">Login</button>
+            </div>
+          </nb-tab>
+          <nb-tab tabTitle="Register">
+            <div>
+                <h1 class="title">Registration form</h1>
+                <div class="field">
+                  <label class="label">Full name:</label>
+                  <input nbInput fullWidth type="text" placeholder="Enter your full name">
+                </div>
+                <div class="field">
+                  <label class="label">Contact number:</label>
+                  <input nbInput fullWidth type="text" placeholder="Enter your mobile or stationary number">
+                </div>
+                <div class="field">
+                  <label class="label">Email address:</label>
+                  <input nbInput fullWidth formControlName="name" type="text" placeholder="E-mail" >
+                </div>
+                <div class="field">
+                  <label class="label">Password:</label>
+                  <input nbInput type="password" fullWidth formControlName="surname" placeholder="Password" >
+                </div>
+                <div class="field">
+                  <label class="label">Repeat password:</label>
+                  <input nbInput fullWidth type="password" placeholder="Password" >
+                </div>
+                <div class="field">
+                  <label class="label">What program do you apply to?</label>
+                  <nb-select class="program-dropdown" placeholder="Select program">
+                    <nb-option value="1">Bachelors</nb-option>
+                    <nb-option value="2">Masters</nb-option>
+                    <nb-option value="3">Option 3</nb-option>
+                    <nb-option value="4">Option 4</nb-option>
+                  </nb-select>
+                </div>
+                <div class="field">
+                  <label class="label">How did you find out about us?</label>
+                  <input nbInput fullWidth type="password" placeholder="How did you find out about us" >
+                </div>
+                <div class="field">
+                  <label class="label">Country of citizenship:</label>
+                  <nb-select class="program-dropdown" placeholder="Select your citizenship">
+                    <nb-option value="1">Russia</nb-option>
+                    <nb-option value="2">Ukraine</nb-option>
+                    <nb-option value="3">Option 3</nb-option>
+                    <nb-option value="4">Option 4</nb-option>
+                  </nb-select>
+                </div>
+                <button nbButton  href="#pablo"  (click)="submitForm()" class="field">Register</button>
+            </div>
+          </nb-tab>
+        </nb-tabset>
+      </nb-card-body>
+    </nb-card>
+    </form>
+  </nb-layout-column>
+</nb-layout>
