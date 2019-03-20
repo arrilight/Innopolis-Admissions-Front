@@ -2,6 +2,8 @@ import { RouterModule } from '@angular/router'; // we also need angular router f
 import { NbSidebarModule, NbLayoutModule, NbButtonModule, NbContextMenuModule, NbSidebarService, NbMenuModule} from '@nebular/theme';
 import {NgModule} from '@angular/core';
 import {CandidatePageComponent} from './candidate-page.component';
+import {UserSidebarComponent} from '../../components/user-sidebar/user-sidebar.component';
+import {SharedModule} from '../../components/shared.module';
 
 @NgModule({
   declarations: [
@@ -14,6 +16,7 @@ import {CandidatePageComponent} from './candidate-page.component';
     NbMenuModule.forRoot(),
     NbButtonModule,
     NbContextMenuModule,
+    SharedModule
   ],
   providers: [NbSidebarService], // we need this service for the sidebar
 })

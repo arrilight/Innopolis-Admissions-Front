@@ -8,12 +8,13 @@ import {SharedModule} from '../../components/shared.module';
   declarations: [
     LoginPageComponent
   ],
-    imports: [
-  RouterModule, // RouterModule.forRoot(routes, { useHash: true }), if this is your app.module
-  NbLayoutModule,
-  NbSidebarModule,
-      SharedModule
-],
+  imports: [
+    RouterModule, // RouterModule.forRoot(routes, { useHash: true }), if this is your app.module
+    NbLayoutModule,
+    NbSidebarModule,
+    SharedModule
+  ],
   providers: [NbSidebarService], // we need this service for the sidebar
 })
-export class LoginPageModule {}
+export class LoginPageModule {
+}
