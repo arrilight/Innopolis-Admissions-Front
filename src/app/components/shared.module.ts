@@ -1,7 +1,7 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {UserSidebarComponent} from './user-sidebar/user-sidebar.component';
-import {NbCardModule, NbLayoutModule, NbListModule, NbMenuModule, NbSidebarModule, NbUserModule} from '@nebular/theme';
+import {NbCardModule, NbLayoutModule, NbListModule, NbMenuModule, NbSidebarModule, NbUserModule,  NbProgressBarModule} from '@nebular/theme';
 import { DocumentsComponentComponent } from './dumb/documents-component/documents-component.component';
 import {NbInputModule} from '@nebular/theme';
 import { CandidateTestsComponent } from './dumb/candidate-tests/candidate-tests.component';
@@ -20,7 +20,8 @@ import { CandidateTestsComponent } from './dumb/candidate-tests/candidate-tests.
     NbListModule,
     NbMenuModule,
     NbSidebarModule,
-    NbInputModule
+    NbInputModule,
+    NbProgressBarModule
   ],
   exports: [UserSidebarComponent,
     DocumentsComponentComponent,

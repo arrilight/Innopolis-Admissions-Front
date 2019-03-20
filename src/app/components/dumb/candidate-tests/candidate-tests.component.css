@@ -9,3 +9,7 @@
   margin: 10px 20px;
   flex-shrink: 0;
 }
+
+.card:hover{
+  box-shadow: 20px 17px 53px -17px rgba(24,169,153,0.63) ;
+}
