@@ -13,6 +13,17 @@ export class ManagerPageComponent implements OnInit {
         { title: "Notification 2" },
     ];
 
+    testsInPull = [
+        { title: "Math", status: "Not taken", result: "-" },
+        { title: "CS", status: "Not taken", result: "-" },
+        { title: "English", status: "Not taken", result: "-" },
+    ];
+
+    assignedTests = [
+        { title: "Math", status: "Not taken", result: "-" },
+        { title: "CS", status: "Not taken", result: "-" },
+    ];
+
     menuList: NbMenuItem[] = [
         {
             icon: "fas fa-users",

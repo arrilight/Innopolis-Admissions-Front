@@ -1,19 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'app-candidate-tests',
-  templateUrl: './candidate-tests.component.html',
-  styleUrls: ['./candidate-tests.component.css']
+    selector: "app-candidate-tests",
+    templateUrl: "./candidate-tests.component.html",
+    styleUrls: ["./candidate-tests.component.css"],
 })
 export class CandidateTestsComponent implements OnInit {
-  tests = [
-    {title: 'Math', status: 'Not taken', result: '-'},
-    {title: 'CS', status: 'Not taken', result: '-'}
-  ];
+    tests = [
+        { title: "Math", status: "Not taken", result: "-" },
+        { title: "CS", status: "Not taken", result: "-" },
+        { title: "English", status: "Not taken", result: "-" },
+    ];
 
-  constructor() { }
+    constructor() {}
 
-  ngOnInit() {
-  }
-
+    ngOnInit() {}
 }

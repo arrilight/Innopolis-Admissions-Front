@@ -6,6 +6,7 @@
     width: 5px;
 }
 :host nb-layout-column {
+    position: relative;
 }
 :host nb-layout-column:first-child {
     background: #e3e6f9;
@@ -15,4 +16,40 @@
 }
 :host nb-layout-column:last-child {
     background: #f4f4f7;
+}
+
+.program-select {
+    width: 250px;
+}
+
+.column-footer {
+    position: absolute;
+    display: flex;
+    width: 90%;
+    padding: 20px 0 20px 0;
+    bottom: 0;
+}
+.add-button {
+    position: absolute;
+    right: 0px;
+}
+
+p {
+    margin: 10px;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.card {
+    width: 250px;
+    margin: 10px 20px;
+    flex-shrink: 0;
+}
+
+.card:hover {
+    box-shadow: 20px 17px 53px -17px rgba(24, 169, 153, 0.63);
 }
