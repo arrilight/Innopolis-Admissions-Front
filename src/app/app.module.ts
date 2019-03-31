@@ -14,6 +14,8 @@ import {
 import { LoginPageModule } from "./pages/login-page/login-page.module";
 import { CandidatePageModule } from "./pages/candidate-page/candidate-page.module";
 import { ManagerPageModule } from "./pages/manager-page/manager-page.module";
+import { StoreModule } from "@ngrx/store";
+import { reducers } from "./+state";
 
 @NgModule({
     declarations: [AppComponent],
@@ -24,6 +26,7 @@ import { ManagerPageModule } from "./pages/manager-page/manager-page.module";
         ManagerPageModule,
         LoginPageModule,
         SharedModule,
+        StoreModule.forRoot(reducers),
         NbLayoutModule,
         NbThemeModule.forRoot(),
         NbMenuModule.forRoot(),
