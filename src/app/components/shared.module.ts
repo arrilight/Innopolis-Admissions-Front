@@ -1,43 +1,47 @@
-import { NgModule } from "@angular/core";
-import { CommonModule } from "@angular/common";
-import { UserSidebarComponent } from "./user-sidebar/user-sidebar.component";
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {UserSidebarComponent} from './user-sidebar/user-sidebar.component';
 import {
-    NbCardModule,
+  NbCardModule,
+  NbLayoutModule,
+  NbListModule,
+  NbMenuModule,
+  NbSidebarModule,
+  NbUserModule,
+  NbProgressBarModule,
+  NbSelectModule,
+} from '@nebular/theme';
+import {DocumentsComponentComponent} from './dumb/info-form-component/documents-component.component';
+import {NbInputModule} from '@nebular/theme';
+import {CandidateTestsComponent} from './dumb/candidate-tests/candidate-tests.component';
+import {CandidateInterviewsComponent} from './dumb/candidate-interviews/candidate-interviews.component';
+
+@NgModule({
+  declarations: [
+    UserSidebarComponent,
+    DocumentsComponentComponent,
+    CandidateTestsComponent,
+    CandidateInterviewsComponent,
+  ],
+  imports: [
+    CommonModule,
     NbLayoutModule,
+    NbSidebarModule,
+    NbUserModule,
+    NbCardModule,
     NbListModule,
     NbMenuModule,
     NbSidebarModule,
-    NbUserModule,
+    NbInputModule,
     NbProgressBarModule,
     NbSelectModule,
-} from "@nebular/theme";
-import { DocumentsComponentComponent } from "./dumb/documents-component/documents-component.component";
-import { NbInputModule } from "@nebular/theme";
-import { CandidateTestsComponent } from "./dumb/candidate-tests/candidate-tests.component";
-
-@NgModule({
-    declarations: [
-        UserSidebarComponent,
-        DocumentsComponentComponent,
-        CandidateTestsComponent,
-    ],
-    imports: [
-        CommonModule,
-        NbLayoutModule,
-        NbSidebarModule,
-        NbUserModule,
-        NbCardModule,
-        NbListModule,
-        NbMenuModule,
-        NbSidebarModule,
-        NbInputModule,
-        NbProgressBarModule,
-        NbSelectModule,
-    ],
-    exports: [
-        UserSidebarComponent,
-        DocumentsComponentComponent,
-        CandidateTestsComponent,
-    ],
+  ],
+  exports: [
+    UserSidebarComponent,
+    DocumentsComponentComponent,
+    CandidateTestsComponent,
+    CandidateInterviewsComponent
+  ],
 })
-export class SharedModule {}
+export class SharedModule {
+}
