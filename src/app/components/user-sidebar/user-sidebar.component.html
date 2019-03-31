@@ -1,11 +1,13 @@
-<nb-user size="xlarge" name="{{ name }}" title="{{ status }}" color="#cccccc"
-    >>
+<nb-user *ngIf="userInfo" size="xlarge" name="{{ userInfo.name + ' ' + userInfo.surname }}" title="{{ status }}"
+         picture="{{userInfo.photo}}}}" title="{{userInfo.status}}" color="#cccccc"
+>>
 </nb-user>
-<div *ngIf="progress">
-    <nb-progress-bar class="progressbar" [value]="progress" status="success"
-        >{{ progress }}% complete</nb-progress-bar
-    >
+<div *ngIf="userInfo.progress">
+  <nb-progress-bar class="progressbar" [value]="userInfo.progress" status="success"
+  >{{ userInfo.progress }}% complete
+  </nb-progress-bar
+  >
 </div>
 <div class="space"></div>
 
-<nb-menu [items]="menuList"> </nb-menu>
+<nb-menu [items]="menuList"></nb-menu>

@@ -1,38 +1,36 @@
 <nb-layout>
-    <nb-layout-header>
-        Logo
-        <button
-            nbButton
-            outline
-            status="primary"
-            size="small"
-            [nbContextMenu]="items"
-            nbContextMenuPlacement="right"
-            nbContextMenuTrigger="click"
-            class="notification"
-        >
-            Notifications
-            <!--<img alt='notifications' class="notification" src="../../../assets/bell-outline.svg"/>-->
-        </button>
-    </nb-layout-header>
-    <nb-layout-column>
-        <div *ngIf="currentSubPage === 'Profile information'">
-            <app-documents-component></app-documents-component>
-        </div>
-        <div *ngIf="currentSubPage === 'Tests'">
-            <app-candidate-tests></app-candidate-tests>
-        </div>
-        <div *ngIf="currentSubPage === 'Interviews'">
-            <app-candidate-tests></app-candidate-tests>
-        </div>
-    </nb-layout-column>
-    <nb-sidebar>
-        <app-user-sidebar
-            name="Joe Candidatov"
-            status="in progress"
-            (chosen)="setSubPage($event)"
-            progress="70"
-            [menuList]="menuList"
-        ></app-user-sidebar>
-    </nb-sidebar>
+  <nb-layout-header>
+    Logo
+    <button
+      nbButton
+      outline
+      status="primary"
+      size="small"
+      [nbContextMenu]="items"
+      nbContextMenuPlacement="right"
+      nbContextMenuTrigger="click"
+      class="notification"
+    >
+      Notifications
+      <!--<img alt='notifications' class="notification" src="../../../assets/bell-outline.svg"/>-->
+    </button>
+  </nb-layout-header>
+  <nb-layout-column>
+    <div *ngIf="currentSubPage === 'Profile information'">
+      <app-documents-component></app-documents-component>
+    </div>
+    <div *ngIf="currentSubPage === 'Tests'">
+      <app-candidate-tests></app-candidate-tests>
+    </div>
+    <div *ngIf="currentSubPage === 'Interviews'">
+      <app-candidate-tests></app-candidate-tests>
+    </div>
+  </nb-layout-column>
+  <nb-sidebar>
+    <app-user-sidebar
+      (chosen)="setSubPage($event)"
+      [menuList]="menuList"
+    ></app-user-sidebar
+    >
+  </nb-sidebar>
 </nb-layout>
