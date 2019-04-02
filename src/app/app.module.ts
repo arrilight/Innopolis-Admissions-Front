@@ -19,6 +19,7 @@ import { reducers } from './+state';
 import { EffectsModule } from '@ngrx/effects';
 import { TestsEffects } from './+state/tests/tests.effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { StaffPageModule } from './pages/staff-page/staff-page.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -27,6 +28,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
     AppRoutingModule,
     CandidatePageModule,
     ManagerPageModule,
+    StaffPageModule,
     LoginPageModule,
     SharedModule,
     StoreModule.forRoot(reducers),

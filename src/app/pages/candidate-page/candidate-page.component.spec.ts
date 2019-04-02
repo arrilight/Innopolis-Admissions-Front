@@ -1,24 +1,24 @@
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import {CandidatePageComponent} from './candidate-page.component';
+import { CandidatePageComponent } from "./candidate-page.component";
 
-describe('ManagerPageComponent', () => {
-  let component: CandidatePageComponent;
-  let fixture: ComponentFixture<CandidatePageComponent>;
+describe("ManagerPageComponent", () => {
+    let component: CandidatePageComponent;
+    let fixture: ComponentFixture<CandidatePageComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [CandidatePageComponent],
-    }).compileComponents();
-  }));
+    beforeEach(async(() => {
+        TestBed.configureTestingModule({
+            declarations: [CandidatePageComponent],
+        }).compileComponents();
+    }));
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(CandidatePageComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+    beforeEach(() => {
+        fixture = TestBed.createComponent(CandidatePageComponent);
+        component = fixture.componentInstance;
+        fixture.detectChanges();
+    });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+    it("should create", () => {
+        expect(component).toBeTruthy();
+    });
 });

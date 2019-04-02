@@ -1,5 +1,5 @@
-import {Component, OnInit} from '@angular/core';
-import {NbMenuItem} from '@nebular/theme';
+import { Component, OnInit } from '@angular/core';
+import { NbMenuItem } from '@nebular/theme';
 import { GlobalState } from '../../+state';
 import { Store, select } from '@ngrx/store';
 import { LoadTestsPool } from '../../+state/tests/tests.actions';
@@ -13,9 +13,9 @@ import { getIsTestsLoading } from '../../+state/tests/tests.selectors';
 })
 export class CandidatePageComponent implements OnInit {
   items = [
-    {title: 'Notification 1'},
-    {title: 'A looooong text of a notification'},
-    {title: 'Notification 2'},
+    { title: 'Notification 1' },
+    { title: 'A looooong text of a notification' },
+    { title: 'Notification 2' },
   ];
 
   menuList: NbMenuItem[] = [

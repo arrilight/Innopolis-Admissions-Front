@@ -1,6 +1,6 @@
-import {Action} from '@ngrx/store';
-import {HttpErrorResponse} from '@angular/common/http';
-import {TestInfoInterface} from '../../interfaces/test-interface';
+import { Action } from '@ngrx/store';
+import { HttpErrorResponse } from '@angular/common/http';
+import { TestInfoInterface } from '../../interfaces/test-interface';
 
 export enum TestsActionTypes {
   LOAD_TESTS_POOL = '[Tests] Load Tests Pool',
@@ -15,7 +15,8 @@ export class TestsAction implements Action {
 export class LoadTestsPool implements Action {
   readonly type = TestsActionTypes.LOAD_TESTS_POOL;
 
-  constructor(public payload = null) {}
+  constructor(public payload = null) {
+  }
 }
 
 export class LoadTestsPoolSuccess implements Action {
