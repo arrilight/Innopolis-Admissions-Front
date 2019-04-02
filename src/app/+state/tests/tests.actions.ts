@@ -13,21 +13,20 @@ export class TestsAction implements Action {
 }
 
 export class LoadTestsPool implements Action {
-  readonly type: TestsActionTypes;
+  readonly type = TestsActionTypes.LOAD_TESTS_POOL;
 
-  constructor(public payload = null) {
-  }
+  constructor(public payload = null) {}
 }
 
 export class LoadTestsPoolSuccess implements Action {
-  readonly type: TestsActionTypes;
+  readonly type = TestsActionTypes.LOAD_TESTS_POOL_SUCCESS;
 
   constructor(public payload: { tests: TestInfoInterface[] }) {
   }
 }
 
 export class LoadTestsPoolFail implements Action {
-  readonly type: TestsActionTypes;
+  readonly type = TestsActionTypes.LOAD_TESTS_POOL_FAIL;
 
   constructor(public payload: { error: HttpErrorResponse }) {
   }
