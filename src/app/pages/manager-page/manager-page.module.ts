@@ -1,4 +1,4 @@
-import { RouterModule } from "@angular/router"; // we also need angular router for Nebular to function properly
+import { RouterModule } from '@angular/router'; // we also need angular router for Nebular to function properly
 import {
     NbSidebarModule,
     NbLayoutModule,
@@ -8,11 +8,11 @@ import {
     NbMenuModule,
     NbSelectModule,
     NbCardModule,
-} from "@nebular/theme";
-import { NgModule } from "@angular/core";
-import { ManagerPageComponent } from "./manager-page.component";
-import { SharedModule } from "../../components/shared.module";
-import { CommonModule } from "@angular/common";
+} from '@nebular/theme';
+import { NgModule } from '@angular/core';
+import { ManagerPageComponent } from './manager-page.component';
+import { SharedModule } from '../../components/shared.module';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
     declarations: [ManagerPageComponent],
