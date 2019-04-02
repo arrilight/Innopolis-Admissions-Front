@@ -1,221 +1,216 @@
 <nb-layout>
-  <nb-layout-column class="card-wrapper">
-    <nb-card class="login-card">
-      <nb-card-body>
-        <nb-tabset>
-          <nb-tab tabTitle="Login">
-            <form [formGroup]="loginForm">
-              <div>
-                <h1 class="title">Sign In</h1>
-                <div class="field">
-                  <label class="label">Email address:</label>
-                  <input
-                    nbInput
-                    fullWidth
-                    formControlName="login"
-                    type="text"
-                    placeholder="E-mail"
-                  />
-                </div>
-                <div class="field">
-                  <label class="label">Password:</label>
-                  <input
-                    nbInput
-                    type="password"
-                    fullWidth
-                    formControlName="password"
-                    placeholder="Password"
-                  />
-                </div>
-                <div class="button-wrapper">
-                  <button
-                    nbButton
-                    href="#pablo"
-                    (click)="login()"
-                    class="field"
-                  >
-                    Login
-                  </button>
-                </div>
-              </div>
-            </form>
-          </nb-tab>
+    <nb-layout-column class="card-wrapper">
+        <nb-card class="login-card">
+            <nb-card-body>
+                <nb-tabset>
+                    <nb-tab tabTitle="Login">
+                        <form [formGroup]="loginForm">
+                            <div>
+                                <h1 class="title">Sign In</h1>
+                                <div class="field">
+                                    <label class="label">Email address:</label>
+                                    <input
+                                        nbInput
+                                        fullWidth
+                                        formControlName="login"
+                                        type="text"
+                                        placeholder="E-mail"
+                                    />
+                                </div>
+                                <div class="field">
+                                    <label class="label">Password:</label>
+                                    <input
+                                        nbInput
+                                        type="password"
+                                        fullWidth
+                                        formControlName="password"
+                                        placeholder="Password"
+                                    />
+                                </div>
+                                <div class="button-wrapper">
+                                    <button
+                                        nbButton
+                                        href="#pablo"
+                                        (click)="login()"
+                                        class="field"
+                                    >
+                                        Login
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </nb-tab>
 
-          <nb-tab tabTitle="Register">
-            <form [formGroup]="registrationForm">
-              <div>
-                <h1 class="title">Registration form</h1>
-                <div class="field">
-                  <label class="label">Name:</label>
-                  <input
-                    nbInput
-                    fullWidth
-                    type="text"
-                    formControlName="name"
-                    placeholder="Enter your first name"
-                  />
-                </div>
-                <div class="field">
-                  <label class="label">Surname:</label>
-                  <input
-                    nbInput
-                    fullWidth
-                    type="text"
-                    formControlName="surname"
-                    placeholder="Enter your surname"
-                  />
-                </div>
-                <div class="field">
-                  <label class="label"
-                  >Second name/Patronymic:</label
-                  >
-                  <input
-                    nbInput
-                    fullWidth
-                    type="text"
-                    formControlName="second_name"
-                    placeholder="Enter your second name/patronymic"
-                  />
-                </div>
-                <div class="field">
-                  <label class="label">Date of birth:</label>
-                  <input
-                    nbInput
-                    fullWidth
-                    type="date"
-                    formControlName="date_of_birth"
-                    placeholder="Enter your birth date"
-                  />
-                </div>
-                <div class="field">
-                  <label class="label">Nationality:</label>
-                  <input
-                    nbInput
-                    fullWidth
-                    type="text"
-                    formControlName="nationality"
-                    placeholder="Enter your nationality"
-                  />
-                </div>
-                <div class="field">
-                  <label class="label">Skype:</label>
-                  <input
-                    nbInput
-                    fullWidth
-                    type="text"
-                    formControlName="skype"
-                    placeholder="Enter your Skype login"
-                  />
-                </div>
-                <div class="field">
-                  <label class="label">Contact number:</label>
-                  <input
-                    nbInput
-                    fullWidth
-                    type="text"
-                    placeholder="Enter your mobile or stationary number"
-                  />
-                </div>
-                <div class="field">
-                  <label class="label">Email address:</label>
-                  <input
-                    nbInput
-                    fullWidth
-                    formControlName="login"
-                    type="text"
-                    placeholder="E-mail"
-                  />
-                </div>
-                <div class="field">
-                  <label class="label">Password:</label>
-                  <input
-                    nbInput
-                    type="password"
-                    formControlName="password"
-                    fullWidth
-                    placeholder="Password"
-                  />
-                </div>
-                <div class="field">
-                  <label class="label"
-                  >Repeat password:</label
-                  >
-                  <input
-                    nbInput
-                    fullWidth
-                    type="password"
-                    placeholder="Password"
-                  />
-                </div>
-                <div class="field">
-                  <label class="label"
-                  >What program do you apply to?</label
-                  >
-                  <nb-select
-                    class="program-dropdown"
-                    placeholder="Select program"
-                  >
-                    <nb-option value="1"
-                    >Bachelors
-                    </nb-option
-                    >
-                    <nb-option value="2">Masters</nb-option>
-                    <nb-option value="3"
-                    >Option 3
-                    </nb-option
-                    >
-                    <nb-option value="4"
-                    >Option 4
-                    </nb-option
-                    >
-                  </nb-select>
-                </div>
-                <div class="field">
-                  <label class="label"
-                  >How did you find out about us?</label
-                  >
-                  <input
-                    nbInput
-                    fullWidth
-                    type="password"
-                    placeholder="How did you find out about us"
-                  />
-                </div>
-                <div class="field">
-                  <label class="label"
-                  >Country of citizenship:</label
-                  >
-                  <nb-select
-                    class="program-dropdown"
-                    placeholder="Select your citizenship"
-                  >
-                    <nb-option value="1">Russia</nb-option>
-                    <nb-option value="2">Ukraine</nb-option>
-                    <nb-option value="3"
-                    >Option 3
-                    </nb-option
-                    >
-                    <nb-option value="4"
-                    >Option 4
-                    </nb-option
-                    >
-                  </nb-select>
-                </div>
-                <div class="button-wrapper">
-                  <button
-                    nbButton
-                    href="#pablo"
-                    (click)="submitForm()"
-                    class="field"
-                  >
-                    Register
-                  </button>
-                </div>
-              </div>
-            </form>
-          </nb-tab>
-        </nb-tabset>
-      </nb-card-body>
-    </nb-card>
-  </nb-layout-column>
+                    <nb-tab tabTitle="Register">
+                        <form [formGroup]="registrationForm">
+                            <div>
+                                <h1 class="title">Registration form</h1>
+                                <div class="field">
+                                    <label class="label">Name:</label>
+                                    <input
+                                        nbInput
+                                        fullWidth
+                                        type="text"
+                                        formControlName="name"
+                                        placeholder="Enter your first name"
+                                    />
+                                </div>
+                                <div class="field">
+                                    <label class="label">Surname:</label>
+                                    <input
+                                        nbInput
+                                        fullWidth
+                                        type="text"
+                                        formControlName="surname"
+                                        placeholder="Enter your surname"
+                                    />
+                                </div>
+                                <div class="field">
+                                    <label class="label"
+                                        >Second name/Patronymic:</label
+                                    >
+                                    <input
+                                        nbInput
+                                        fullWidth
+                                        type="text"
+                                        formControlName="second_name"
+                                        placeholder="Enter your second name/patronymic"
+                                    />
+                                </div>
+                                <div class="field">
+                                    <label class="label">Date of birth:</label>
+                                    <input
+                                        nbInput
+                                        fullWidth
+                                        type="date"
+                                        formControlName="date_of_birth"
+                                        placeholder="Enter your birth date"
+                                    />
+                                </div>
+                                <div class="field">
+                                    <label class="label">Nationality:</label>
+                                    <input
+                                        nbInput
+                                        fullWidth
+                                        type="text"
+                                        formControlName="nationality"
+                                        placeholder="Enter your nationality"
+                                    />
+                                </div>
+                                <div class="field">
+                                    <label class="label">Skype:</label>
+                                    <input
+                                        nbInput
+                                        fullWidth
+                                        type="text"
+                                        formControlName="skype"
+                                        placeholder="Enter your Skype login"
+                                    />
+                                </div>
+                                <div class="field">
+                                    <label class="label">Contact number:</label>
+                                    <input
+                                        nbInput
+                                        fullWidth
+                                        type="text"
+                                        placeholder="Enter your mobile or stationary number"
+                                    />
+                                </div>
+                                <div class="field">
+                                    <label class="label">Email address:</label>
+                                    <input
+                                        nbInput
+                                        fullWidth
+                                        formControlName="login"
+                                        type="text"
+                                        placeholder="E-mail"
+                                    />
+                                </div>
+                                <div class="field">
+                                    <label class="label">Password:</label>
+                                    <input
+                                        nbInput
+                                        type="password"
+                                        formControlName="password"
+                                        fullWidth
+                                        placeholder="Password"
+                                    />
+                                </div>
+                                <div class="field">
+                                    <label class="label"
+                                        >Repeat password:</label
+                                    >
+                                    <input
+                                        nbInput
+                                        fullWidth
+                                        type="password"
+                                        placeholder="Password"
+                                    />
+                                </div>
+                                <div class="field">
+                                    <label class="label"
+                                        >What program do you apply to?</label
+                                    >
+                                    <nb-select
+                                        class="program-dropdown"
+                                        placeholder="Select program"
+                                    >
+                                        <nb-option value="1"
+                                            >Bachelors
+                                        </nb-option>
+                                        <nb-option value="2">Masters</nb-option>
+                                        <nb-option value="3"
+                                            >Option 3
+                                        </nb-option>
+                                        <nb-option value="4"
+                                            >Option 4
+                                        </nb-option>
+                                    </nb-select>
+                                </div>
+                                <div class="field">
+                                    <label class="label"
+                                        >How did you find out about us?</label
+                                    >
+                                    <input
+                                        nbInput
+                                        fullWidth
+                                        type="password"
+                                        placeholder="How did you find out about us"
+                                    />
+                                </div>
+                                <div class="field">
+                                    <label class="label"
+                                        >Country of citizenship:</label
+                                    >
+                                    <nb-select
+                                        class="program-dropdown"
+                                        placeholder="Select your citizenship"
+                                    >
+                                        <nb-option value="1">Russia</nb-option>
+                                        <nb-option value="2">Ukraine</nb-option>
+                                        <nb-option value="3"
+                                            >Option 3
+                                        </nb-option>
+                                        <nb-option value="4"
+                                            >Option 4
+                                        </nb-option>
+                                    </nb-select>
+                                </div>
+                                <div class="button-wrapper">
+                                    <button
+                                        nbButton
+                                        href="#pablo"
+                                        (click)="submitForm()"
+                                        class="field"
+                                    >
+                                        Register
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </nb-tab>
+                </nb-tabset>
+            </nb-card-body>
+        </nb-card>
+    </nb-layout-column>
 </nb-layout>

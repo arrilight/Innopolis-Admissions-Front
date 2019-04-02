@@ -1,4 +1,4 @@
-import { RouterModule } from "@angular/router"; // we also need angular router for Nebular to function properly
+import { RouterModule } from '@angular/router'; // we also need angular router for Nebular to function properly
 import {
     NbSidebarModule,
     NbLayoutModule,
@@ -6,14 +6,16 @@ import {
     NbContextMenuModule,
     NbSidebarService,
     NbMenuModule,
-} from "@nebular/theme";
-import { NgModule } from "@angular/core";
-import { CandidatePageComponent } from "./candidate-page.component";
-import { SharedModule } from "../../components/shared.module";
-import { CommonModule } from "@angular/common";
+    NbSelectModule,
+    NbCardModule,
+} from '@nebular/theme';
+import { NgModule } from '@angular/core';
+import { StaffPageComponent } from './staff-page.component';
+import { SharedModule } from '../../components/shared.module';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
-    declarations: [CandidatePageComponent],
+    declarations: [StaffPageComponent],
     imports: [
         RouterModule, // RouterModule.forRoot(routes, { useHash: true }), if this is your app.module
         NbLayoutModule,
@@ -23,7 +25,9 @@ import { CommonModule } from "@angular/common";
         NbContextMenuModule,
         SharedModule,
         CommonModule,
+        NbSelectModule,
+        NbCardModule,
     ],
     providers: [NbSidebarService], // we need this service for the sidebar
 })
-export class CandidatePageModule {}
+export class StaffPageModule {}
