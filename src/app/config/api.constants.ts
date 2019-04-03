@@ -23,7 +23,7 @@ export class API {
     return `${this.MAIN}/changeProfile`;
   }
 
-  public static get NOTIFICATIONS(): {
+  public static get CANDIDATES(): {
     UPLOAD: string;
     TEST_RESULTS: string;
     REGISTER: string;
