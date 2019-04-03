@@ -46,5 +46,6 @@ import { TestComponent } from './dumb/test/test.component';
         CandidateInterviewsComponent,
         TestComponent,
     ],
+    entryComponents: [TestComponent]
 })
 export class SharedModule {}
