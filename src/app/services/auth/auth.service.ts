@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { BackendService } from './backend.service';
 import { filter, tap } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { HttpResponse } from '@angular/common/http';
+import { BackendService } from '../backend/backend.service';
 
 @Injectable()
 export class AuthService {
