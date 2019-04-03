@@ -1,10 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { NbMenuItem } from '@nebular/theme';
-import { GlobalState } from '../../+state';
-import { Store, select } from '@ngrx/store';
-import { LoadTestsPool } from '../../+state/tests/tests.actions';
-import { tap } from 'rxjs/internal/operators/tap';
-import { getIsTestsLoading } from '../../+state/tests/tests.selectors';
 
 @Component({
     selector: 'app-candidate-page',
@@ -38,23 +33,9 @@ export class CandidatePageComponent implements OnInit {
 
     currentSubPage = 'Profile information';
 
-    constructor(private store$: Store<GlobalState>) {
-        this.store$.pipe(
-            select(getIsTestsLoading),
-            tap(value => console.warn(value))
-        );
-    }
+    constructor() {}
 
-    ngOnInit() {
-        this.store$.dispatch(new LoadTestsPool());
-        console.warn('on init');
-        this.store$
-            .pipe(
-                select(getIsTestsLoading),
-                tap(value => console.warn(value))
-            )
-            .subscribe();
-    }
+    ngOnInit() {}
 
     setSubPage(name: string) {
         this.currentSubPage = name;

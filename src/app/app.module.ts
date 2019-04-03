@@ -10,6 +10,7 @@ import {
     NbMenuModule,
     NbSidebarModule,
     NbThemeModule,
+    NbWindowModule,
 } from '@nebular/theme';
 import { LoginPageModule } from './pages/login-page/login-page.module';
 import { CandidatePageModule } from './pages/candidate-page/candidate-page.module';
@@ -25,25 +26,26 @@ import { AuthService } from './services/auth/auth.service';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-    declarations: [AppComponent],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        CandidatePageModule,
-        ManagerPageModule,
-        StaffPageModule,
-        LoginPageModule,
-        SharedModule,
-        StoreModule.forRoot(reducers),
-        EffectsModule.forRoot([TestsEffects]),
-        StoreDevtoolsModule.instrument({ maxAge: 10 }),
-        NbLayoutModule,
-        NbThemeModule.forRoot(),
-        NbMenuModule.forRoot(),
-        NbSidebarModule.forRoot(),
-        HttpClientModule,
-    ],
-    providers: [BackendService, AuthService],
-    bootstrap: [AppComponent],
+  declarations: [AppComponent],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    CandidatePageModule,
+    ManagerPageModule,
+    StaffPageModule,
+    LoginPageModule,
+    SharedModule,
+    StoreModule.forRoot(reducers),
+    EffectsModule.forRoot([TestsEffects]),
+    StoreDevtoolsModule.instrument({ maxAge: 10 }),
+    NbLayoutModule,
+    NbThemeModule.forRoot(),
+    NbMenuModule.forRoot(),
+    NbSidebarModule.forRoot(),
+    HttpClientModule,
+    NbWindowModule.forRoot(),
+  ],
+  providers: [],
+  bootstrap: [AppComponent],
 })
 export class AppModule {}

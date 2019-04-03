@@ -1,6 +1,6 @@
-import { NgModule } from "@angular/core";
-import { CommonModule } from "@angular/common";
-import { UserSidebarComponent } from "./user-sidebar/user-sidebar.component";
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { UserSidebarComponent } from './user-sidebar/user-sidebar.component';
 import {
     NbCardModule,
     NbLayoutModule,
@@ -10,18 +10,21 @@ import {
     NbUserModule,
     NbProgressBarModule,
     NbSelectModule,
-} from "@nebular/theme";
-import { DocumentsComponentComponent } from "./dumb/info-form-component/documents-component.component";
-import { NbInputModule } from "@nebular/theme";
-import { CandidateTestsComponent } from "./dumb/candidate-tests/candidate-tests.component";
-import { CandidateInterviewsComponent } from "./dumb/candidate-interviews/candidate-interviews.component";
+} from '@nebular/theme';
+import { DocumentsComponentComponent } from './dumb/info-form-component/documents-component.component';
+import { NbInputModule } from '@nebular/theme';
+import { CandidateTestsComponent } from './dumb/candidate-tests/candidate-tests.component';
+import { CandidateInterviewsComponent } from './dumb/candidate-interviews/candidate-interviews.component';
+import { TestComponent } from './dumb/test/test.component';
 
+// @ts-ignore
 @NgModule({
     declarations: [
         UserSidebarComponent,
         DocumentsComponentComponent,
         CandidateTestsComponent,
         CandidateInterviewsComponent,
+        TestComponent,
     ],
     imports: [
         CommonModule,
@@ -41,6 +44,8 @@ import { CandidateInterviewsComponent } from "./dumb/candidate-interviews/candid
         DocumentsComponentComponent,
         CandidateTestsComponent,
         CandidateInterviewsComponent,
+        TestComponent,
     ],
+    entryComponents: [TestComponent]
 })
 export class SharedModule {}
