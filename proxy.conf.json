@@ -1,0 +1,10 @@
+{
+  "/api": {
+    "target": "http://inno-admissions.tk/api",
+    "secure": true,
+    "pathRewrite": {
+      "^/api": ""
+    },
+    "changeOrigin": true
+  }
+}

@@ -1,6 +1,6 @@
 export class API {
   public static get MAIN(): string {
-    return 'https://inno-admissions.tk/api';
+    return '/api';
   }
 
   public static get REFRESH(): string {
