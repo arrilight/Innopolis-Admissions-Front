@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {TestComponent} from '../test/test.component';
 import {NbWindowService} from '@nebular/theme';
+import {Router, RouterOutlet} from '@angular/router';
 
 @Component({
     selector: 'app-candidate-tests',
@@ -16,11 +17,12 @@ export class CandidateTestsComponent implements OnInit {
         { title: 'English', status: 'Not taken', result: '-' },
     ];
 
-    constructor(private windowService: NbWindowService) {}
+    constructor(private windowService: NbWindowService, router: Router) {}
 
     ngOnInit() {}
 
     openTest(testName: string) {
+      // this.router.navigate();
       this.windowService.open(TestComponent, { title: testName });
     }
 }
