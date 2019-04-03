@@ -10,6 +10,8 @@ import {
     NbUserModule,
     NbProgressBarModule,
     NbSelectModule,
+    NbRadioModule,
+    NbCheckboxModule,
 } from '@nebular/theme';
 import { DocumentsComponentComponent } from './dumb/info-form-component/documents-component.component';
 import { NbInputModule } from '@nebular/theme';
@@ -38,6 +40,8 @@ import { TestComponent } from './dumb/test/test.component';
         NbInputModule,
         NbProgressBarModule,
         NbSelectModule,
+        NbRadioModule,
+        NbCheckboxModule,
     ],
     exports: [
         UserSidebarComponent,
@@ -46,6 +50,6 @@ import { TestComponent } from './dumb/test/test.component';
         CandidateInterviewsComponent,
         TestComponent,
     ],
-    entryComponents: [TestComponent]
+    entryComponents: [TestComponent],
 })
 export class SharedModule {}

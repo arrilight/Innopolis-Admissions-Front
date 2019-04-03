@@ -1,4 +1,28 @@
-<p>
-  test works!
-  ёбабоба
-</p>
+<div class="rest-warpper">
+    <nb-card
+        [size]="medium"
+        *ngFor="let question of test.questions; let i = index"
+    >
+        <nb-card-body>
+            <p>{{ question.question }}</p>
+            <div *ngIf="question.answer_type === 'single_choice'">
+                <nb-radio-group>
+                    <nb-radio
+                        *ngFor="let option of question.answer_options"
+                        [value]="option"
+                    >
+                        {{ option }}
+                    </nb-radio>
+                </nb-radio-group>
+            </div>
+            <div *ngIf="question.answer_type === 'open_anser'">
+                <input type="text" nbInput placeholder="Your answer" />
+            </div>
+            <div *ngIf="question.answer_type === 'multiple_choice'">
+                <nb-checkbox *ngFor="let option of question.answer_options">{{
+                    option
+                }}</nb-checkbox>
+            </div>
+        </nb-card-body>
+    </nb-card>
+</div>
