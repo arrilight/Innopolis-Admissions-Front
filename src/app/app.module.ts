@@ -10,13 +10,13 @@ import {
     NbMenuModule,
     NbSidebarModule,
     NbThemeModule,
+    NbWindowModule,
 } from '@nebular/theme';
 import { LoginPageModule } from './pages/login-page/login-page.module';
 import { CandidatePageModule } from './pages/candidate-page/candidate-page.module';
 import { ManagerPageModule } from './pages/manager-page/manager-page.module';
 import { StoreModule } from '@ngrx/store';
 import { reducers } from './+state';
-import { StaffPageComponent } from './pages/staff-page/staff-page.component';
 import { StaffPageModule } from './pages/staff-page/staff-page.module';
 
 @NgModule({
@@ -34,6 +34,7 @@ import { StaffPageModule } from './pages/staff-page/staff-page.module';
         NbThemeModule.forRoot(),
         NbMenuModule.forRoot(),
         NbSidebarModule.forRoot(),
+        NbWindowModule.forRoot(),
     ],
     providers: [],
     bootstrap: [AppComponent],
