@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { NbMenuItem, NbMenuService } from '@nebular/theme';
 import { UserProfileInterface } from '../../interfaces/user-profile-interface';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-user-sidebar',
@@ -13,7 +14,7 @@ export class UserSidebarComponent implements OnInit {
     @Output() chosen = new EventEmitter<string>();
     @Input() menuList: NbMenuItem[];
 
-    constructor(menu: NbMenuService) {
+    constructor(menu: NbMenuService, private router: Router) {
         this.userInfo = {
             name: 'John',
             surname: 'Doe',
@@ -25,7 +26,12 @@ export class UserSidebarComponent implements OnInit {
         };
 
         menu.onItemClick().subscribe(({ item }) => {
-            this.chosen.emit(item.title);
+            const routes: Record<string, string> = {
+                'Profile information': 'profile',
+                Tests: 'tests',
+                Interviews: 'interviews',
+            };
+            this.router.navigate([`candidate/${routes[item.title]}`]);
         });
     }
 

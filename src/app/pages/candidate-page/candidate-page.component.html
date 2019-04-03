@@ -16,15 +16,7 @@
         </button>
     </nb-layout-header>
     <nb-layout-column>
-        <div *ngIf="currentSubPage === 'Profile information'">
-            <app-documents-component></app-documents-component>
-        </div>
-        <div *ngIf="currentSubPage === 'Tests'">
-            <app-candidate-tests></app-candidate-tests>
-        </div>
-        <div *ngIf="currentSubPage === 'Interviews'">
-            <app-candidate-interviews></app-candidate-interviews>
-        </div>
+      <router-outlet></router-outlet>
     </nb-layout-column>
     <nb-sidebar>
         <app-user-sidebar
