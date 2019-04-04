@@ -19,7 +19,15 @@ export class UserSidebarComponent implements OnInit {
                 'Profile information': 'profile',
                 Tests: 'tests',
                 Interviews: 'interviews',
+                '  Candidates': 'candidates',
+                '  Professors': 'professors',
+                '  Tests': 'tests',
             };
+            if (this.router.url === '/manager') {
+              this.chosen.emit(item.title);
+
+              return;
+            }
             this.router.navigate([`candidate/${routes[item.title]}`]);
         });
     }
