@@ -1,0 +1,9 @@
+.button-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.submit-button {
+  margin-top: 15px;
+  margin-bottom: 30px;
+}
