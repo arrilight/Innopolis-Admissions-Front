@@ -46,9 +46,8 @@ export class CandidatePageComponent implements OnInit {
                 userInfo =>
                     (this.userInfo = {
                         ...userInfo,
-                        progress: 60,
                         photo:
-                            'https://ssl.gstatic.com/docs/common/profile/dinosaur_lg.png',
+                            'https://images-gmi-pmc.edge-generalmills.com/9dd2e32b-613d-4515-9597-39ba6ad86b8b.jpg',
                     })
             );
     }

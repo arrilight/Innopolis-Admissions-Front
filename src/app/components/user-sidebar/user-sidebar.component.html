@@ -9,7 +9,7 @@
 >
 </nb-user>
 
-<div *ngIf="userInfo.progress">
+<div *ngIf="userInfo?.progress">
     <nb-progress-bar
         class="progressbar"
         [value]="userInfo.progress"
