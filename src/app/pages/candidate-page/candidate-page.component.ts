@@ -40,16 +40,29 @@ export class CandidatePageComponent implements OnInit {
     constructor(private userService: UserService) {}
 
     ngOnInit() {
+        this.userService.getProfileInfo(null).subscribe(
+            userInfo =>
+                (this.userInfo = {
+                    ...userInfo,
+                    photo:
+                        'https://images-gmi-pmc.edge-generalmills.com/9dd2e32b-613d-4515-9597-39ba6ad86b8b.jpg',
+                })
+        );
+        // this.userService
+        //     .getInterviewData('login5')
+        //     .subscribe(x => console.log(x), y => console.log(y));
+        // this.userService
+        //     .changeProfileDetailsInfo('login3', {
+        //         telephone: '8-800-555-35-35',
+        //         email: 'n',
+        //         program: 'BS',
+        //         country: 'Prusiia',
+        //         skype: 'bul-n',
+        //     })
+        //     .subscribe(x => console.log(x), y => console.log(y));
         this.userService
-            .getProfileInfo(null)
-            .subscribe(
-                userInfo =>
-                    (this.userInfo = {
-                        ...userInfo,
-                        photo:
-                            'https://images-gmi-pmc.edge-generalmills.com/9dd2e32b-613d-4515-9597-39ba6ad86b8b.jpg',
-                    })
-            );
+            .updateCandidateStatus('login5', 'GRADED')
+            .subscribe(x => console.log(x), y => console.log(y));
     }
 
     setSubPage(name: string) {

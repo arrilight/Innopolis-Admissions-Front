@@ -1,13 +1,13 @@
-import { ProgramInterface } from "./program-interface";
-import { FileInterface } from "./file-interface";
+import { ProgramInterface } from './program-interface';
+import { FileInterface } from './file-interface';
 
 export interface UserProfileDetailsInterface {
     telephone: string;
     email: string;
-    program: ProgramInterface;
+    program: string;
     country: string;
     skype: string;
-    documents: DocumentsInterface;
+    documents?: DocumentsInterface;
 }
 
 interface DocumentsInterface {

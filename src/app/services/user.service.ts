@@ -88,9 +88,9 @@ export class UserService {
         headers.append('Content-Type', 'application/json');
         return this.backend.post$<UserProfileDetailsInterface>(
             // TODO from the documentation it is absolutely unclear how to send this request. Fix!
-            API.MANAGER.UPDATE_STATUS + `?login=${login}&status=${status}`,
+            API.MANAGER.UPDATE_STATUS + `?login=${login}`,
             {
-                body: { login, status },
+                body: { status },
                 headers,
             }
         );
@@ -137,10 +137,10 @@ export class UserService {
         );
     }
 
-    public getInterviewData(login: string): Observable<[InterviewInterface]> {
+    public getInterviewData(login: string): Observable<InterviewInterface> {
         const headers = new HttpHeaders();
         headers.append('Content-Type', 'application/json');
-        return this.backend.get$<[InterviewInterface]>(
+        return this.backend.get$<InterviewInterface>(
             API.CANDIDATE.INTERVIEWS + `?login=${login}`,
             {
                 headers,

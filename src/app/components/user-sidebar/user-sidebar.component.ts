@@ -14,7 +14,7 @@ export class UserSidebarComponent implements OnInit {
     @Input() userInfo: UserProfileInterface;
 
     constructor(menu: NbMenuService, private router: Router) {
-      menu.onItemClick().subscribe(({ item }) => {
+        menu.onItemClick().subscribe(({ item }) => {
             const routes: Record<string, string> = {
                 'Profile information': 'profile',
                 Tests: 'tests',

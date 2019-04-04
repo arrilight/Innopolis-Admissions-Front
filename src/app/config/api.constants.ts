@@ -20,7 +20,7 @@ export class API {
     }
 
     public static get GET_NOTIFICATIONS(): string {
-        return `${this.MAIN}/changeProfile`;
+        return `${this.MAIN}/getNotifications`;
     }
 
     public static get CANDIDATE(): {
@@ -48,24 +48,24 @@ export class API {
     }
 
     public static get MANAGER(): {
-      UPDATE_STATUS: string;
-      INTERVIEW: string;
+        UPDATE_STATUS: string;
+        INTERVIEW: string;
     } {
-      const baseUrl = `${this.MAIN}/managers`;
+        const baseUrl = `${this.MAIN}/managers`;
 
-      return {
-        UPDATE_STATUS: `${baseUrl}/updateStatus`,
-        INTERVIEW: `${baseUrl}/interview`,
-      };
+        return {
+            UPDATE_STATUS: `${baseUrl}/updateStatus`,
+            INTERVIEW: `${baseUrl}/interview`,
+        };
     }
 
     public static get STAFF(): {
-      GET_INTERVIEW_LIST: string;
+        GET_INTERVIEW_LIST: string;
     } {
-      const baseUrl = `${this.MAIN}/staff`;
+        const baseUrl = `${this.MAIN}/staff`;
 
-      return {
-        GET_INTERVIEW_LIST: `${baseUrl}/interviews`
-      };
+        return {
+            GET_INTERVIEW_LIST: `${baseUrl}/interviews`,
+        };
     }
 }
