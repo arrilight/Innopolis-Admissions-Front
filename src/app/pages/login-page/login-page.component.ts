@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth/auth.service';
+import { UserService } from '../../services/user.service';
 
 @Component({
     selector: 'app-login-page',
@@ -25,16 +26,38 @@ export class LoginPageComponent implements OnInit {
         skype: new FormControl('', Validators.required),
     });
 
-    constructor(private router: Router, private authService: AuthService) {}
+    constructor(
+        private router: Router,
+        private authService: AuthService,
+        private userService: UserService
+    ) {}
 
-    ngOnInit() {}
+    ngOnInit() {
+        this.checkIfAuthenticated();
+    }
 
     public login(): void {
-        this.authService.login('login5', 'password5').subscribe();
-        // this.router.navigate(["candidate"]);
+        this.authService
+            .login(
+                this.loginForm.get('login').value,
+                this.loginForm.get('password').value
+            )
+            .subscribe(
+                () =>
+                    this.router.navigate([
+                        this.userService.getLocalUserInfo().role,
+                    ]),
+                error => console.log('login error: ', error)
+            );
     }
 
     public submitForm(): void {
         this.router.navigate(['candidate']);
+    }
+
+    private checkIfAuthenticated(): void {
+        if (this.authService.isAuthenticated()) {
+            this.router.navigate([this.userService.getLocalUserInfo().role]);
+        }
     }
 }

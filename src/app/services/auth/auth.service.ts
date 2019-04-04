@@ -4,30 +4,27 @@ import { Observable } from 'rxjs';
 import { HttpHeaders, HttpResponse } from '@angular/common/http';
 import { BackendService } from '../backend/backend.service';
 import { API } from '../../config/api.constants';
+import { UserService } from '../user.service';
+import { RegistrationDataInterface } from '../../interfaces/registration-data-interface';
 
 @Injectable()
 export class AuthService {
-    constructor(private backend: BackendService) {}
-
-    // public authenticate(email: string, password: string): Observable<HttpResponse<any>> {
-    //   // return this.backend.login(email, password).pipe(
-    //   //   filter(token => !!token),
-    //   //   tap(token => localStorage.setItem('currentUser', token['token']))
-    //   // );
-    // }
+    constructor(
+        private backend: BackendService,
+        private userService: UserService
+    ) {}
 
     public isAuthenticated(): boolean {
-        const token = localStorage.getItem('currentUser');
-
-        return !!token;
+        const user = this.userService.getLocalUserInfo();
+        return !!user;
     }
 
     public logout(): void {
-        localStorage.removeItem('currentUser');
+        this.userService.removeLocalUserInfo();
     }
 
     public getToken(): string {
-        return localStorage.getItem('currentUser');
+        return this.userService.getLocalUserInfo().token;
     }
 
     public login(
@@ -41,10 +38,25 @@ export class AuthService {
                 body: { login, password },
                 headers,
             })
-            .pipe(tap(token => console.log(token)));
-        // return this.http.post<HttpResponse<string>>(address, {
-        //     email,
-        //     password,
-        // });
+            .pipe(
+                tap(response => {
+                    this.userService.saveLocalUserInfo(
+                        login,
+                        response.role,
+                        response.token
+                    );
+                })
+            );
+    }
+
+    public register(
+        data: RegistrationDataInterface
+    ): Observable<AuthResponseInterface> {
+        const headers = new HttpHeaders();
+        headers.append('Content-Type', 'application/json');
+        return this.backend.post$<any>(API.REGISTER, {
+            body: data,
+            headers,
+        });
     }
 }

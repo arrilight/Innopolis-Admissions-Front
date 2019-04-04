@@ -23,29 +23,40 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { StaffPageModule } from './pages/staff-page/staff-page.module';
 import { BackendService } from './services/backend/backend.service';
 import { AuthService } from './services/auth/auth.service';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { UserService } from './services/user.service';
+import { AuthInterceptor } from './interceptors/auth.interceptor';
 
 @NgModule({
-  declarations: [AppComponent],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    CandidatePageModule,
-    ManagerPageModule,
-    StaffPageModule,
-    LoginPageModule,
-    SharedModule,
-    StoreModule.forRoot(reducers),
-    EffectsModule.forRoot([TestsEffects]),
-    StoreDevtoolsModule.instrument({ maxAge: 10 }),
-    NbLayoutModule,
-    NbThemeModule.forRoot(),
-    NbMenuModule.forRoot(),
-    NbSidebarModule.forRoot(),
-    HttpClientModule,
-    NbWindowModule.forRoot(),
-  ],
-  providers: [BackendService],
-  bootstrap: [AppComponent],
+    declarations: [AppComponent],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        CandidatePageModule,
+        ManagerPageModule,
+        StaffPageModule,
+        LoginPageModule,
+        SharedModule,
+        StoreModule.forRoot(reducers),
+        EffectsModule.forRoot([TestsEffects]),
+        StoreDevtoolsModule.instrument({ maxAge: 10 }),
+        NbLayoutModule,
+        NbThemeModule.forRoot(),
+        NbMenuModule.forRoot(),
+        NbSidebarModule.forRoot(),
+        HttpClientModule,
+        NbWindowModule.forRoot(),
+    ],
+    providers: [
+        BackendService,
+        AuthService,
+        UserService,
+        {
+            provide: HTTP_INTERCEPTORS,
+            useClass: AuthInterceptor,
+            multi: true,
+        },
+    ],
+    bootstrap: [AppComponent],
 })
 export class AppModule {}

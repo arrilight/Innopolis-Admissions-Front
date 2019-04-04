@@ -1,6 +1,5 @@
 export interface TestQuestionInterface {
-  question: string;
-  answer_type: string;
-  answer_options: string[];
+    question: string;
+    answer_type: string;
+    answer_options: string[];
 }
-

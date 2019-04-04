@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NbMenuItem } from '@nebular/theme';
+import { UserService } from '../../services/user.service';
+import { UserProfileInterface } from '../../interfaces/user-profile-interface';
 
 @Component({
     selector: 'app-candidate-page',
@@ -33,9 +35,23 @@ export class CandidatePageComponent implements OnInit {
 
     currentSubPage = 'Profile information';
 
-    constructor() {}
+    userInfo: UserProfileInterface;
 
-    ngOnInit() {}
+    constructor(private userService: UserService) {}
+
+    ngOnInit() {
+        this.userService
+            .getProfileInfo(null)
+            .subscribe(
+                userInfo =>
+                    (this.userInfo = {
+                        ...userInfo,
+                        progress: 60,
+                        photo:
+                            'https://ssl.gstatic.com/docs/common/profile/dinosaur_lg.png',
+                    })
+            );
+    }
 
     setSubPage(name: string) {
         this.currentSubPage = name;

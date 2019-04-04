@@ -1,8 +1,8 @@
 .notification {
-  position: absolute;
-  right: 20px;
+    position: absolute;
+    right: 20px;
 }
 
 .body-wrapper {
-  display: flex;
+    display: flex;
 }
