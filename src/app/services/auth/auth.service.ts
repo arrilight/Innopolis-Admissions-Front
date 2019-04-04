@@ -54,7 +54,7 @@ export class AuthService {
     ): Observable<AuthResponseInterface> {
         const headers = new HttpHeaders();
         headers.append('Content-Type', 'application/json');
-        return this.backend.post$<any>(API.REGISTER, {
+        return this.backend.post$<any>(API.CANDIDATE.REGISTER, {
             body: data,
             headers,
         });
