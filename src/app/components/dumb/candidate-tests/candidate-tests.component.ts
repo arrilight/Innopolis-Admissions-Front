@@ -17,12 +17,11 @@ export class CandidateTestsComponent implements OnInit {
         { title: 'English', status: 'Not taken', result: '-' },
     ];
 
-    constructor(private windowService: NbWindowService, router: Router) {}
+    constructor(private router: Router) {}
 
     ngOnInit() {}
 
     openTest(testName: string) {
-        // this.router.navigate();
-        this.windowService.open(TestComponent, { title: testName });
+        this.router.navigate([`candidate/test/123`]);
     }
 }

@@ -5,6 +5,7 @@ import { CandidatePageComponent } from './pages/candidate-page/candidate-page.co
 import { ManagerPageComponent } from './pages/manager-page/manager-page.component';
 import { StaffPageComponent } from './pages/staff-page/staff-page.component';
 import { CandidateTestsComponent } from './components/dumb/candidate-tests/candidate-tests.component';
+import { TestComponent } from './components/dumb/test/test.component';
 
 const routes: Routes = [
     { path: '', component: LoginPageComponent },
@@ -12,7 +13,10 @@ const routes: Routes = [
     {
         path: 'candidate',
         component: CandidatePageComponent,
-        children: [{ path: 'tests', component: CandidateTestsComponent }],
+        children: [
+          { path: 'tests', component: CandidateTestsComponent },
+          { path: 'test/:testId', component: TestComponent }
+          ],
     },
     { path: 'manager', component: ManagerPageComponent },
     { path: 'staff', component: StaffPageComponent },

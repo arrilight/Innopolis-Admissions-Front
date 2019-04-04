@@ -69,7 +69,6 @@ export class TestComponent implements OnInit {
             },
         ],
     };
-    constructor(protected windowRef: NbWindowRef) {}
 
     ngOnInit() {}
 }
