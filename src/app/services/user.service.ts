@@ -37,7 +37,7 @@ export class UserService {
         const headers = new HttpHeaders();
         headers.append('Content-Type', 'application/json');
         return this.backend.get$<UserProfileDetailsInterface>(
-            API.CANDIDATE.PROFILE_DETAILS + `?login=${login}`,
+            API.CANDIDATE.PROFILE + `?login=${login}`,
             {
                 headers,
             }

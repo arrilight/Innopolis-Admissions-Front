@@ -18,6 +18,7 @@ import { NbInputModule } from '@nebular/theme';
 import { CandidateTestsComponent } from './dumb/candidate-tests/candidate-tests.component';
 import { CandidateInterviewsComponent } from './dumb/candidate-interviews/candidate-interviews.component';
 import { TestComponent } from './dumb/test/test.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 // @ts-ignore
 @NgModule({
@@ -42,6 +43,7 @@ import { TestComponent } from './dumb/test/test.component';
         NbSelectModule,
         NbRadioModule,
         NbCheckboxModule,
+        ReactiveFormsModule,
     ],
     exports: [
         UserSidebarComponent,

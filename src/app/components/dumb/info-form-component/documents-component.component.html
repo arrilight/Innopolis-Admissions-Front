@@ -1,9 +1,9 @@
-<div class="container">
+<div [formGroup]="formGroup" class="container">
     <h3>Profile info</h3>
-    <input nbInput type="text" placeholder="Name" />
-    <input nbInput type="text" placeholder="Surname" />
-    <input nbInput type="email" placeholder="Email" />
-    <input nbInput type="tel" placeholder="Telephone number" />
+    <input nbInput type="text" placeholder="Name" formControlName="name" />
+    <input nbInput type="text" placeholder="Surname" formControlName="surname"/>
+    <input nbInput type="email" placeholder="Email" formControlName="email"/>
+    <input nbInput type="tel" placeholder="Telephone number" formControlName="tel" />
     <nb-select
         class="select"
         placeholder="Select Program"
@@ -12,7 +12,7 @@
         <nb-option value="1">Bachelor</nb-option>
         <nb-option value="2">Masters</nb-option>
     </nb-select>
-    <input nbInput type="text" placeholder="Country of studentship" />
+    <input nbInput type="text" placeholder="Country of studentship" formControlName="country" />
 
     <div>
         <h4>Documents</h4>
