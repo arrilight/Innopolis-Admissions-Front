@@ -1,4 +1,3 @@
-import { RouterModule } from '@angular/router'; // we also need angular router for Nebular to function properly
 import {
     NbSidebarModule,
     NbLayoutModule,
@@ -13,11 +12,13 @@ import { NgModule } from '@angular/core';
 import { ManagerPageComponent } from './manager-page.component';
 import { SharedModule } from '../../components/shared.module';
 import { CommonModule } from '@angular/common';
+import { TestPoolComponent } from './components/test-pool/test-pool.component';
+import { ManagerPageRoutingModule } from './manager-page-routing.module';
 
 @NgModule({
-    declarations: [ManagerPageComponent],
+    declarations: [ManagerPageComponent, TestPoolComponent],
     imports: [
-        RouterModule, // RouterModule.forRoot(routes, { useHash: true }), if this is your app.module
+        ManagerPageRoutingModule,
         NbLayoutModule,
         NbSidebarModule,
         NbMenuModule.forRoot(),
@@ -28,6 +29,7 @@ import { CommonModule } from '@angular/common';
         NbSelectModule,
         NbCardModule,
     ],
+    exports: [TestPoolComponent],
     providers: [NbSidebarService], // we need this service for the sidebar
 })
 export class ManagerPageModule {}
