@@ -3,7 +3,6 @@ import { UserProfileInterface } from '../interfaces/user-profile-interface';
 import { Observable } from 'rxjs';
 import { HttpHeaders } from '@angular/common/http';
 import { API } from '../config/api.constants';
-import { tap } from 'rxjs/operators';
 import { BackendService } from './backend/backend.service';
 import { UserProfileDetailsInterface } from '../interfaces/user-profile-details-interface';
 import { NotificationInterface } from '../interfaces/notification-interface';
@@ -38,7 +37,7 @@ export class UserService {
         const headers = new HttpHeaders();
         headers.append('Content-Type', 'application/json');
         return this.backend.get$<UserProfileDetailsInterface>(
-            API.GET_PROFILE_DETAILS + `?login=${login}`,
+            API.CANDIDATE.PROFILE_DETAILS + `?login=${login}`,
             {
                 headers,
             }
@@ -70,7 +69,7 @@ export class UserService {
         const headers = new HttpHeaders();
         headers.append('Content-Type', 'application/json');
         return this.backend.post$<UserProfileDetailsInterface>(
-            API.CHANGE_PROFILE_DETAILS + `?login=${login}`,
+            API.CANDIDATE.PROFILE_DETAILS + `?login=${login}`,
             {
                 body: newInfo,
                 headers,
@@ -89,7 +88,7 @@ export class UserService {
         headers.append('Content-Type', 'application/json');
         return this.backend.post$<UserProfileDetailsInterface>(
             // TODO from the documentation it is absolutely unclear how to send this request. Fix!
-            API.UPDATE_CANDIDATE_STATUS + `?login=${login}&status=${status}`,
+            API.MANAGER.UPDATE_STATUS + `?login=${login}&status=${status}`,
             {
                 body: { login, status },
                 headers,
@@ -120,7 +119,7 @@ export class UserService {
         const headers = new HttpHeaders();
         headers.append('Content-Type', 'application/json');
         return this.backend.get$<[TestInfoInterface]>(
-            API.GET_TEST_INFO + `?login=${login}`,
+            API.CANDIDATE.TEST_INFO + `?login=${login}`,
             {
                 headers,
             }
@@ -131,7 +130,7 @@ export class UserService {
         const headers = new HttpHeaders();
         headers.append('Content-Type', 'application/json');
         return this.backend.get$<[TestQuestionInterface]>(
-            API.TEST_DATA + `?test_name=${testName}`,
+            API.CANDIDATE.TEST_DATA + `?test_name=${testName}`,
             {
                 headers,
             }
@@ -142,7 +141,7 @@ export class UserService {
         const headers = new HttpHeaders();
         headers.append('Content-Type', 'application/json');
         return this.backend.get$<[InterviewInterface]>(
-            API.INTERVIEWS + `?login=${login}`,
+            API.CANDIDATE.INTERVIEWS + `?login=${login}`,
             {
                 headers,
             }
@@ -158,7 +157,7 @@ export class UserService {
         headers.append('Content-Type', 'application/json');
         return this.backend.post$<any>(
             // TODO from the documentation it is absolutely unclear how to send this request. Fix!
-            API.CREATE_INTERVIEW,
+            API.MANAGER.INTERVIEW,
             {
                 body: { candidateLogin, staffLogin, date },
                 headers,
@@ -170,7 +169,7 @@ export class UserService {
         const headers = new HttpHeaders();
         headers.append('Content-Type', 'application/json');
         return this.backend.get$<[InterviewInterface]>(
-            API.GET_INTERVIEW_LIST + `?login=${login}`,
+            API.STAFF.GET_INTERVIEW_LIST + `?login=${login}`,
             {
                 headers,
             }

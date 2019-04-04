@@ -2,17 +2,6 @@ export class API {
     public static get MAIN(): string {
         return '/api';
     }
-    public static get CANDIDATE(): string {
-        return '/candidates';
-    }
-
-    public static get MANAGER(): string {
-        return '/managers';
-    }
-
-    public static get STAFF(): string {
-        return '/staff';
-    }
 
     public static get REFRESH(): string {
         return `${this.MAIN}/refresh`;
@@ -34,42 +23,7 @@ export class API {
         return `${this.MAIN}/changeProfile`;
     }
 
-    public static get GET_PROFILE_DETAILS(): string {
-        return `${this.CANDIDATE}/profile`;
-    }
-
-    public static get REGISTER(): string {
-        return `${this.CANDIDATE}/register`;
-    }
-    public static get GET_TEST_INFO(): string {
-        return `${this.CANDIDATE}/testInfo`;
-    }
-
-    public static get TEST_DATA(): string {
-        return `${this.CANDIDATE}/testData`;
-    }
-
-    public static get INTERVIEWS(): string {
-        return `${this.CANDIDATE}/interviews`;
-    }
-
-    public static get CHANGE_PROFILE_DETAILS(): string {
-        return `${this.CANDIDATE}/profileDetails`;
-    }
-
-    public static get UPDATE_CANDIDATE_STATUS(): string {
-        return `${this.MANAGER}/updateStatus`;
-    }
-
-    public static get CREATE_INTERVIEW(): string {
-        return `${this.MANAGER}/interview`;
-    }
-
-    public static get GET_INTERVIEW_LIST(): string {
-        return `${this.STAFF}/interviews`;
-    }
-
-    public static get CANDIDATES(): {
+    public static get CANDIDATE(): {
         UPLOAD: string;
         TEST_RESULTS: string;
         REGISTER: string;
@@ -91,5 +45,27 @@ export class API {
             INTERVIEWS: `${base}/interviews`,
             PROFILE_DETAILS: `${base}/profileDetails`,
         };
+    }
+
+    public static get MANAGER(): {
+      UPDATE_STATUS: string;
+      INTERVIEW: string;
+    } {
+      const baseUrl = `${this.MAIN}/managers`;
+
+      return {
+        UPDATE_STATUS: `${baseUrl}/updateStatus`,
+        INTERVIEW: `${baseUrl}/interview`,
+      };
+    }
+
+    public static get STAFF(): {
+      GET_INTERVIEW_LIST: string;
+    } {
+      const baseUrl = `${this.MAIN}/staff`;
+
+      return {
+        GET_INTERVIEW_LIST: `${baseUrl}/interviews`
+      };
     }
 }
