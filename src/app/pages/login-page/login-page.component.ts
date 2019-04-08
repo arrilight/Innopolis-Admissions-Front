@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth/auth.service';
 import { UserService } from '../../services/user.service';
+import { RegistrationDataInterface } from '../../interfaces/registration-data-interface';
 
 @Component({
     selector: 'app-login-page',
@@ -25,6 +26,19 @@ export class LoginPageComponent implements OnInit {
         nationality: new FormControl('', Validators.required),
         skype: new FormControl('', Validators.required),
     });
+
+    private getRegistrationInterface(): RegistrationDataInterface {
+        return {
+            login: this.registrationForm.get('login').value,
+            password: this.registrationForm.get('password').value,
+            name: this.registrationForm.get('name').value,
+            surname: this.registrationForm.get('surname').value,
+            second_name: this.registrationForm.get('second_name').value,
+            date_of_birth: this.registrationForm.get('date_of_birth').value,
+            nationality: this.registrationForm.get('nationality').value,
+            skype: this.registrationForm.get('skype').value,
+        };
+    }
 
     constructor(
         private router: Router,
@@ -51,8 +65,13 @@ export class LoginPageComponent implements OnInit {
             );
     }
 
-    public submitForm(): void {
-        this.router.navigate(['candidate']);
+    public submitRegistrationForm(): void {
+        this.authService
+            .register(this.getRegistrationInterface())
+            .subscribe(
+                () => this.router.navigate(['login']),
+                error => console.warn('error while registration', error)
+            );
     }
 
     private checkIfAuthenticated(): void {
