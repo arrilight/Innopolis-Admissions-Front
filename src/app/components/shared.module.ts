@@ -12,6 +12,7 @@ import {
     NbSelectModule,
     NbRadioModule,
     NbCheckboxModule,
+    NbButtonModule,
 } from '@nebular/theme';
 import { DocumentsComponentComponent } from './dumb/info-form-component/documents-component.component';
 import { NbInputModule } from '@nebular/theme';
@@ -37,6 +38,7 @@ import { ReactiveFormsModule } from '@angular/forms';
         NbCardModule,
         NbListModule,
         NbMenuModule,
+        NbButtonModule,
         NbSidebarModule,
         NbInputModule,
         NbProgressBarModule,

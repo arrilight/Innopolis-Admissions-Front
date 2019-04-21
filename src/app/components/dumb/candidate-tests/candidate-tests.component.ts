@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { TestComponent } from '../test/test.component';
-import { NbWindowService } from '@nebular/theme';
-import { Router, RouterOutlet } from '@angular/router';
+import { UserService } from '../../../services/user.service';
+import { Router } from '@angular/router';
+import { TestInfoInterface } from '../../../interfaces/test-interface';
 
 @Component({
     selector: 'app-candidate-tests',
@@ -9,17 +9,24 @@ import { Router, RouterOutlet } from '@angular/router';
     styleUrls: ['./candidate-tests.component.css'],
 })
 export class CandidateTestsComponent implements OnInit {
-    shouldOpenTest = false;
-    windowRef;
-    tests = [
-        { title: 'Math', status: 'Not taken', result: '-' },
-        { title: 'CS', status: 'Not taken', result: '-' },
-        { title: 'English', status: 'Not taken', result: '-' },
-    ];
+    tests: TestInfoInterface[];
 
-    constructor(private router: Router) {}
+    testNamesMap = {
+        math: 'Math',
+        informatics: 'CS',
+        english: 'English',
+    };
 
-    ngOnInit() {}
+    constructor(private router: Router, private userService: UserService) {}
+
+    ngOnInit() {
+        this.userService
+            .getTestsInfo(this.userService.getLocalUserInfo().login)
+            .subscribe(
+                tests => (this.tests = tests),
+                error => console.log('error while loading tests: ', error)
+            );
+    }
 
     openTest(testName: string) {
         this.router.navigate([`candidate/test/123`]);

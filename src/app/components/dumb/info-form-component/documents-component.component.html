@@ -1,18 +1,33 @@
 <div [formGroup]="formGroup" class="container">
     <h3>Profile info</h3>
     <input nbInput type="text" placeholder="Name" formControlName="name" />
-    <input nbInput type="text" placeholder="Surname" formControlName="surname"/>
-    <input nbInput type="email" placeholder="Email" formControlName="email"/>
-    <input nbInput type="tel" placeholder="Telephone number" formControlName="tel" />
+    <input
+        nbInput
+        type="text"
+        placeholder="Surname"
+        formControlName="surname"
+    />
+    <input nbInput type="email" placeholder="Email" formControlName="email" />
+    <input
+        nbInput
+        type="tel"
+        placeholder="Telephone number"
+        formControlName="tel"
+    />
     <nb-select
         class="select"
         placeholder="Select Program"
-        [(selected)]="selectedItem"
+        formControlName="program"
     >
-        <nb-option value="1">Bachelor</nb-option>
-        <nb-option value="2">Masters</nb-option>
+        <nb-option value="BS">Bachelors</nb-option>
+        <nb-option value="MS">Masters</nb-option>
     </nb-select>
-    <input nbInput type="text" placeholder="Country of studentship" formControlName="country" />
+    <input
+        nbInput
+        type="text"
+        placeholder="Country of studentship"
+        formControlName="country"
+    />
 
     <div>
         <h4>Documents</h4>
@@ -20,5 +35,14 @@
         <input nbInput type="file" placeholder="Choose CV" />
         <p>Motivation letter File</p>
         <input nbInput type="file" placeholder="Choose letter" />
+    </div>
+    <div class="button-wrapper">
+        <button
+            nbButton
+            (click)="submitInfo()"
+            class="field"
+        >
+            Change
+        </button>
     </div>
 </div>

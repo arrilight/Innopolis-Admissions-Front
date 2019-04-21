@@ -7,7 +7,7 @@ import {BackendService} from './backend/backend.service';
 import {UserProfileDetailsInterface} from '../interfaces/user-profile-details-interface';
 import {NotificationInterface} from '../interfaces/notification-interface';
 import {TestInfoInterface} from '../interfaces/test-interface';
-import {TestQuestionInterface} from '../interfaces/test-question-interface';
+import {TestQuestionInterface, TestQuestions} from '../interfaces/test-question-interface';
 import {InterviewInterface} from '../interfaces/interview-interface';
 
 @Injectable()
@@ -127,10 +127,10 @@ export class UserService {
     );
   }
 
-  public getTestData(testName: string): Observable<[TestQuestionInterface]> {
+  public getTestData(testName: string): Observable<TestQuestions> {
     const headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
-    return this.backend.get$<[TestQuestionInterface]>(
+    return this.backend.get$<TestQuestions>(
       API.CANDIDATE.TEST_DATA + `?test_name=${testName}`,
       {
         headers,

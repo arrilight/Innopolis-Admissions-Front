@@ -1,8 +1,8 @@
 .container {
     display: flex;
-    flex-flow: column;
-    margin: 20px;
     align-items: center;
+    flex-direction: column;
+    margin: 20px;
 }
 
 input {
@@ -13,4 +13,9 @@ input {
 .select {
     margin: 10px 0;
     width: 300px;
+}
+
+.button-wrapper {
+  display: flex;
+  justify-content: center;
 }
