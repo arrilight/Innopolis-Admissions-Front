@@ -1,15 +1,15 @@
-import { createEntityAdapter, EntityState } from "@ngrx/entity";
+import { createEntityAdapter, EntityState } from '@ngrx/entity';
 import {
     LoadTestsPoolFail,
     LoadTestsPoolSuccess,
     TestsAction,
     TestsActionTypes,
-} from "./tests.actions";
-import { ActionReducer } from "@ngrx/store";
-import { TestInfoInterface } from "../../interfaces/test-interface";
+} from './tests.actions';
+import { ActionReducer } from '@ngrx/store';
+import { TestInfoInterface } from '../../interfaces/test-interface';
 
 export const testsApapter = createEntityAdapter<TestInfoInterface>({
-    selectId: ({ test_id }: TestInfoInterface) => test_id,
+    selectId: ({ test_name }: TestInfoInterface) => test_name,
 });
 
 export interface TestsState extends EntityState<TestInfoInterface> {

@@ -1,4 +1,4 @@
-<div class="test-warpper">
+<div *ngIf="!!test" class="test-warpper">
     <nb-card *ngFor="let question of test.questions; let i = index">
         <nb-card-header> Question {{ i + 1 }} </nb-card-header>
         <nb-card-body>

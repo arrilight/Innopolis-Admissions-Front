@@ -15,7 +15,6 @@ export class TestComponent implements OnInit {
     ngOnInit() {
         this.userService.getTestData('english').subscribe(
             testData => {
-                console.log(testData);
                 this.test = testData;
             },
             error => console.log('error loading test: ', error)
