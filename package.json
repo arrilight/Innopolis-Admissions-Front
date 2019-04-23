@@ -30,6 +30,7 @@
         "@ngrx/store-devtools": "^4.0.0",
         "core-js": "^2.5.4",
         "eva-icons": "^1.1.1",
+        "moment": "^2.24.0",
         "ng-semantic": "latest",
         "prettier": "^1.16.4",
         "rxjs": "~6.3.3",

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { NbMenuItem } from '@nebular/theme';
+import { NbDialogService, NbMenuItem } from '@nebular/theme';
 import { UserService } from '../../services/user.service';
 import { UserProfileInterface } from '../../interfaces/user-profile-interface';
+import { InterviewCardComponent } from '../../components/dumb/interview-card/interview-card.component';
 
 @Component({
     selector: 'app-staff-page',
@@ -39,8 +40,5 @@ export class StaffPageComponent implements OnInit {
                         'https://images-gmi-pmc.edge-generalmills.com/9dd2e32b-613d-4515-9597-39ba6ad86b8b.jpg',
                 })
         );
-        this.userService
-            .getStaffInterviewsList(null)
-            .subscribe(x => console.warn(x));
     }
 }

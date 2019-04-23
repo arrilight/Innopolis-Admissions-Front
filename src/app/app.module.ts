@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { SharedModule } from './components/shared.module';
 
 import {
+    NbDialogModule,
+    NbDialogService,
     NbLayoutModule,
     NbMenuModule,
     NbSidebarModule,
@@ -48,6 +50,7 @@ import { ReactiveFormsModule } from '@angular/forms';
         NbSidebarModule.forRoot(),
         HttpClientModule,
         NbWindowModule.forRoot(),
+        NbDialogModule.forRoot(),
     ],
     providers: [
         BackendService,

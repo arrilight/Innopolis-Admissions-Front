@@ -24,7 +24,8 @@ export class CandidateInterviewsComponent implements OnInit {
 
         this.interview = {
             interviewer: 'login5',
-            date: new Date('2019-04-01T09:05:05.035Z'),
+            new: 'new',
+            date: new Date(),
         };
     }
 

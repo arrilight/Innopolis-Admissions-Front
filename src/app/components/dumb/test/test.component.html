@@ -5,7 +5,7 @@
             <nb-card-body>
                 <p>{{ question.question }}</p>
                 <div *ngIf="question.answer_type === 'single_choice'">
-                    <nb-radio-group formControlName="{{ i }}" name="{{i}}">
+                    <nb-radio-group formControlName="{{ i }}" name="{{ i }}">
                         <nb-radio
                             *ngFor="
                                 let option of question.answer_options;

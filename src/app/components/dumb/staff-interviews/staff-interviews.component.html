@@ -1,20 +1,32 @@
 <div class="container">
     <h3>Upcoming interviews</h3>
-    <nb-card class="card" *ngIf="interview">
+    <nb-card
+        class="card"
+        *ngFor="let interview of interviews"
+        (click)="openCard(interview)"
+    >
         <nb-card-header>Interview</nb-card-header>
         <nb-card-body>
             <p>
                 <b>Interviewer:</b>
-                {{ interview.interviewer }}
+                {{ interview.student.name + ' ' + interview.student.surname }}
+            </p>
+            <p>
+                <b>Interviewer:</b>
+                {{
+                    interview.interviewer.name +
+                        ' ' +
+                        interview.interviewer.surname
+                }}
             </p>
             <p>
                 <b>Date:</b>
                 {{
-                    interview.datetime.getFullYear() +
+                    interview.date.getFullYear() +
                         '.' +
-                        interview.datetime.getMonth() +
+                        interview.date.getMonth() +
                         '.' +
-                        interview.datetime.getDay()
+                        interview.date.getDay()
                 }}
             </p>
         </nb-card-body>

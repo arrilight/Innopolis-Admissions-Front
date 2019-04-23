@@ -8,6 +8,7 @@ import {
     NbMenuModule,
     NbSelectModule,
     NbCardModule,
+    NbDialogService,
 } from '@nebular/theme';
 import { NgModule } from '@angular/core';
 import { StaffPageComponent } from './staff-page.component';

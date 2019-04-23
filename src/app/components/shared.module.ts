@@ -13,6 +13,7 @@ import {
     NbRadioModule,
     NbCheckboxModule,
     NbButtonModule,
+    NbDialogService,
 } from '@nebular/theme';
 import { DocumentsComponentComponent } from './dumb/info-form-component/documents-component.component';
 import { NbInputModule } from '@nebular/theme';
@@ -22,6 +23,7 @@ import { TestComponent } from './dumb/test/test.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { StaffInterviewsComponent } from './dumb/staff-interviews/staff-interviews.component';
 import { UserService } from '../services/user.service';
+import { InterviewCardComponent } from './dumb/interview-card/interview-card.component';
 
 // @ts-ignore
 @NgModule({
@@ -32,6 +34,7 @@ import { UserService } from '../services/user.service';
         CandidateInterviewsComponent,
         TestComponent,
         StaffInterviewsComponent,
+        InterviewCardComponent,
     ],
     imports: [
         CommonModule,
@@ -55,9 +58,10 @@ import { UserService } from '../services/user.service';
         DocumentsComponentComponent,
         CandidateTestsComponent,
         CandidateInterviewsComponent,
+        InterviewCardComponent,
         TestComponent,
     ],
-    entryComponents: [TestComponent],
-    providers: [UserService],
+    entryComponents: [TestComponent, InterviewCardComponent],
+    providers: [UserService, NbDialogService],
 })
 export class SharedModule {}

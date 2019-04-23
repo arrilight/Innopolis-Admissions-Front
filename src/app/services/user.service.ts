@@ -9,7 +9,8 @@ import { NotificationInterface } from '../interfaces/notification-interface';
 import { TestInfoInterface } from '../interfaces/test-interface';
 import { TestQuestions } from '../interfaces/test-question-interface';
 import { InterviewInterface } from '../interfaces/interview-interface';
-import { concatMap, switchMap, tap } from 'rxjs/operators';
+import { concatMap, map, switchMap, tap } from 'rxjs/operators';
+import * as moment from 'moment';
 
 @Injectable()
 export class UserService {
@@ -172,30 +173,25 @@ export class UserService {
     // public getStaffInterviewsList(
     //     login: string
     // ): Observable<[InterviewInterface]> {
-    public getStaffInterviewsList(login: string): Observable<any> {
+    public getStaffInterviewsList(
+        login: string
+    ): Observable<InterviewInterface[]> {
         if (!login) {
             login = this.getLocalUserInfo().login;
         }
         const headers = new HttpHeaders();
         headers.append('Content-Type', 'application/json');
         return this.backend
-            .get$<[InterviewInterface]>(
+            .get$<InterviewInterface[]>(
                 API.STAFF.GET_INTERVIEW_LIST + `?login=${login}`,
                 {
                     headers,
                 }
             )
             .pipe(
-                switchMap(list =>
-                    from(list).pipe(
-                        concatMap((interview: InterviewInterface) =>
-                            forkJoin(
-                                this.getProfileInfo(
-                                    interview.interviewer as string
-                                ),
-                                this.getProfileInfo(interview.student as string)
-                            ).pipe(tap(x => interview))
-                        )
+                tap((interviews: InterviewInterface[]) =>
+                    interviews.map(
+                        interview => (interview.date = new Date(interview.date))
                     )
                 )
             );
