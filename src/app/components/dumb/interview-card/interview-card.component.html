@@ -1,0 +1,64 @@
+<nb-card class="card">
+    <nb-card-header>
+        <div>
+            Interview ({{
+                interview.date.getFullYear() +
+                    '.' +
+                    interview.date.getMonth() +
+                    '.' +
+                    interview.date.getDay()
+            }})
+
+            <div style="height: 20px"></div>
+            <nb-user
+                size="xlarge"
+                name="{{
+                    interview.student.name + ' ' + interview.student.surname
+                }}"
+                title="{{ interview.student.status }}"
+                picture="{{ interview.student.photo }}"
+                color="#cccccc"
+            >
+            </nb-user>
+        </div>
+    </nb-card-header>
+    <nb-card-body>
+        <h3>Evaluation:</h3>
+        <h4>1. Motivation</h4>
+        <nb-select
+            class="select"
+            placeholder="Select motivation"
+            style="width: 200px"
+        >
+            <nb-option>Business</nb-option>
+            <nb-option>Social</nb-option>
+            <nb-option>Technology</nb-option>
+        </nb-select>
+        <h4>2. General CS knowledge</h4>
+        <nb-radio-group style="">
+            <nb-radio>1</nb-radio>
+            <nb-radio>2</nb-radio>
+            <nb-radio>3</nb-radio>
+            <nb-radio>4</nb-radio>
+            <nb-radio>5</nb-radio>
+        </nb-radio-group>
+        <h4>3. Advanced CS knowledge</h4>
+        <nb-radio-group style="">
+            <nb-radio>1</nb-radio>
+            <nb-radio>2</nb-radio>
+            <nb-radio>3</nb-radio>
+            <nb-radio>4</nb-radio>
+            <nb-radio>5</nb-radio>
+        </nb-radio-group>
+        <h4>4. Comments</h4>
+        <textarea nbInput fullWidth placeholder="Full width"></textarea>
+        <h4>5. Final mark</h4>
+        <nb-radio-group style="">
+            <nb-radio>Passed</nb-radio>
+            <nb-radio>Not Passed</nb-radio>
+        </nb-radio-group>
+    </nb-card-body>
+    <nb-card-footer>
+        <button nbButton (click)="ref.close()">Close Dialog</button>
+    </nb-card-footer>
+</nb-card>
