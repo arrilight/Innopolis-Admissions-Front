@@ -225,6 +225,15 @@ export class UserService {
         );
     }
 
+    public gradeStudent(login: string, grade: string) {
+        const headers = new HttpHeaders();
+        headers.append('Content-Type', 'application/json');
+        return this.backend.post$<any>(API.STAFF.GRADE, {
+            body: { student_login: login, grade },
+            headers,
+        });
+    }
+
     public saveLocalUserInfo(login, role, token) {
         const userInfo: LocalUserInfoInterface = {
             login,

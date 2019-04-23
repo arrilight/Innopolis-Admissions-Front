@@ -14,6 +14,7 @@ import {
     NbCheckboxModule,
     NbButtonModule,
     NbDialogService,
+    NbDialogRef,
 } from '@nebular/theme';
 import { DocumentsComponentComponent } from './dumb/info-form-component/documents-component.component';
 import { NbInputModule } from '@nebular/theme';

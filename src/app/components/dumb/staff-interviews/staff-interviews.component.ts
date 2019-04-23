@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../../services/user.service';
 import { InterviewInterface } from '../../../interfaces/interview-interface';
-import { NbDialogService } from '@nebular/theme';
+import { NbDialogRef, NbDialogService } from '@nebular/theme';
 import { InterviewCardComponent } from '../interview-card/interview-card.component';
 import { UserProfileInterface } from '../../../interfaces/user-profile-interface';
 
@@ -25,11 +25,23 @@ export class StaffInterviewsComponent implements OnInit {
         );
     }
 
+    grade(login: string, grade: string) {
+        console.warn('grading ');
+        this.userService
+            .gradeStudent(login, grade)
+            .subscribe(
+                success => console.warn(success),
+                error1 => console.warn(error1)
+            );
+    }
+
     openCard(interview: InterviewInterface) {
+        const grade = this.grade;
         this.dialogService.open(InterviewCardComponent, {
             hasScroll: true,
             context: {
                 interview,
+                grade,
             },
         });
     }

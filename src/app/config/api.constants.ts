@@ -61,11 +61,13 @@ export class API {
 
     public static get STAFF(): {
         GET_INTERVIEW_LIST: string;
+        GRADE: string;
     } {
         const baseUrl = `${this.MAIN}/staff`;
 
         return {
             GET_INTERVIEW_LIST: `${baseUrl}/interviews`,
+            GRADE: `${baseUrl}/grade`,
         };
     }
 }

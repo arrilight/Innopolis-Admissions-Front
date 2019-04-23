@@ -11,18 +11,18 @@
 
             <div style="height: 20px"></div>
             <nb-user
-                size="xlarge"
+                color="#cccccc"
                 name="{{
                     interview.student.name + ' ' + interview.student.surname
                 }}"
-                title="{{ interview.student.status }}"
                 picture="{{ interview.student.photo }}"
-                color="#cccccc"
+                size="xlarge"
+                title="{{ interview.student.status }}"
             >
             </nb-user>
         </div>
     </nb-card-header>
-    <nb-card-body>
+    <nb-card-body [formGroup]="formGroup">
         <h3>Evaluation:</h3>
         <h4>1. Motivation</h4>
         <nb-select
@@ -35,7 +35,7 @@
             <nb-option>Technology</nb-option>
         </nb-select>
         <h4>2. General CS knowledge</h4>
-        <nb-radio-group style="">
+        <nb-radio-group name="generalGrade">
             <nb-radio>1</nb-radio>
             <nb-radio>2</nb-radio>
             <nb-radio>3</nb-radio>
@@ -43,7 +43,7 @@
             <nb-radio>5</nb-radio>
         </nb-radio-group>
         <h4>3. Advanced CS knowledge</h4>
-        <nb-radio-group style="">
+        <nb-radio-group name="advancedGrade">
             <nb-radio>1</nb-radio>
             <nb-radio>2</nb-radio>
             <nb-radio>3</nb-radio>
@@ -53,12 +53,13 @@
         <h4>4. Comments</h4>
         <textarea nbInput fullWidth placeholder="Full width"></textarea>
         <h4>5. Final mark</h4>
-        <nb-radio-group style="">
-            <nb-radio>Passed</nb-radio>
-            <nb-radio>Not Passed</nb-radio>
+        <nb-radio-group style="" formControlName="grade">
+            <nb-radio value="P">Passed</nb-radio>
+            <nb-radio value="F">Not Passed</nb-radio>
         </nb-radio-group>
     </nb-card-body>
     <nb-card-footer>
         <button nbButton (click)="ref.close()">Close Dialog</button>
+        <button nbButton (click)="submit()">Grade</button>
     </nb-card-footer>
 </nb-card>
