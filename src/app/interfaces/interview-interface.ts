@@ -1,7 +1,7 @@
 import { UserProfileInterface } from './user-profile-interface';
 
 export interface InterviewInterface {
-    interviewer: UserProfileInterface;
-    datetime: Date;
-    student?: UserProfileInterface;
+    interviewer: UserProfileInterface | string;
+    date: Date;
+    student?: UserProfileInterface | string;
 }

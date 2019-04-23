@@ -20,6 +20,8 @@ import { CandidateTestsComponent } from './dumb/candidate-tests/candidate-tests.
 import { CandidateInterviewsComponent } from './dumb/candidate-interviews/candidate-interviews.component';
 import { TestComponent } from './dumb/test/test.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { StaffInterviewsComponent } from './dumb/staff-interviews/staff-interviews.component';
+import { UserService } from '../services/user.service';
 
 // @ts-ignore
 @NgModule({
@@ -29,6 +31,7 @@ import { ReactiveFormsModule } from '@angular/forms';
         CandidateTestsComponent,
         CandidateInterviewsComponent,
         TestComponent,
+        StaffInterviewsComponent,
     ],
     imports: [
         CommonModule,
@@ -55,5 +58,6 @@ import { ReactiveFormsModule } from '@angular/forms';
         TestComponent,
     ],
     entryComponents: [TestComponent],
+    providers: [UserService],
 })
 export class SharedModule {}

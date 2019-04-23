@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NbMenuItem } from '@nebular/theme';
+import { UserService } from '../../services/user.service';
+import { UserProfileInterface } from '../../interfaces/user-profile-interface';
 
 @Component({
     selector: 'app-staff-page',
@@ -7,6 +9,7 @@ import { NbMenuItem } from '@nebular/theme';
     styleUrls: ['./staff-page.component.css'],
 })
 export class StaffPageComponent implements OnInit {
+    userInfo: UserProfileInterface;
     items = [
         { title: 'Notification 1' },
         { title: 'A looooong text of a notification' },
@@ -25,7 +28,19 @@ export class StaffPageComponent implements OnInit {
     setSubPage(name: string) {
         this.currentSubPage = name;
     }
-    constructor() {}
+    constructor(private userService: UserService) {}
 
-    ngOnInit() {}
+    ngOnInit() {
+        this.userService.getProfileInfo(null).subscribe(
+            userInfo =>
+                (this.userInfo = {
+                    ...userInfo,
+                    photo:
+                        'https://images-gmi-pmc.edge-generalmills.com/9dd2e32b-613d-4515-9597-39ba6ad86b8b.jpg',
+                })
+        );
+        this.userService
+            .getStaffInterviewsList(null)
+            .subscribe(x => console.warn(x));
+    }
 }

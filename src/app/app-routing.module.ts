@@ -8,6 +8,7 @@ import { CandidateTestsComponent } from './components/dumb/candidate-tests/candi
 import { TestComponent } from './components/dumb/test/test.component';
 import { DocumentsComponentComponent } from './components/dumb/info-form-component/documents-component.component';
 import { CandidateInterviewsComponent } from './components/dumb/candidate-interviews/candidate-interviews.component';
+import { StaffInterviewsComponent } from './components/dumb/staff-interviews/staff-interviews.component';
 
 const routes: Routes = [
     { path: '', component: LoginPageComponent },
@@ -23,7 +24,11 @@ const routes: Routes = [
         ],
     },
     { path: 'manager', component: ManagerPageComponent },
-    { path: 'staff', component: StaffPageComponent },
+    {
+        path: 'staff_member',
+        component: StaffPageComponent,
+        children: [{ path: 'interviews', component: StaffInterviewsComponent }],
+    },
 ];
 
 @NgModule({
