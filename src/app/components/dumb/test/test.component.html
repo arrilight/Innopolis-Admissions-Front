@@ -1,29 +1,56 @@
-<div *ngIf="!!test" class="test-warpper">
-    <nb-card *ngFor="let question of test.questions; let i = index">
-        <nb-card-header> Question {{ i + 1 }} </nb-card-header>
-        <nb-card-body>
-            <p>{{ question.question }}</p>
-            <div *ngIf="question.answer_type === 'single_choice'">
-                <nb-radio-group>
-                    <nb-radio
-                        *ngFor="let option of question.answer_options"
-                        [value]="option"
+<div class="test-warpper">
+    <form *ngIf="!!test" [formGroup]="answers">
+        <nb-card *ngFor="let question of test.questions; let i = index">
+            <nb-card-header> Question {{ i + 1 }} </nb-card-header>
+            <nb-card-body>
+                <p>{{ question.question }}</p>
+                <div *ngIf="question.answer_type === 'single_choice'">
+                    <nb-radio-group formControlName="{{ i }}" name="{{i}}">
+                        <nb-radio
+                            *ngFor="
+                                let option of question.answer_options;
+                                let k = index
+                            "
+                            [value]="k + 1"
+                        >
+                            {{ option }}
+                        </nb-radio>
+                    </nb-radio-group>
+                </div>
+                <div *ngIf="question.answer_type === 'open_answer'">
+                    <label>
+                        <input
+                            type="text"
+                            nbInput
+                            placeholder="Your answer"
+                            formControlName="{{ i }}"
+                        />
+                    </label>
+                </div>
+                <div
+                    *ngIf="question.answer_type === 'multiple_choice'"
+                    [formGroup]="answers.controls[i]"
+                >
+                    <nb-checkbox
+                        *ngFor="
+                            let option of question.answer_options;
+                            let j = index
+                        "
+                        formControlName="opt{{ j }}"
+                        >{{ option }}</nb-checkbox
                     >
-                        {{ option }}
-                    </nb-radio>
-                </nb-radio-group>
-            </div>
-            <div *ngIf="question.answer_type === 'open_anser'">
-                <input type="text" nbInput placeholder="Your answer" />
-            </div>
-            <div *ngIf="question.answer_type === 'multiple_choice'">
-                <nb-checkbox *ngFor="let option of question.answer_options">{{
-                    option
-                }}</nb-checkbox>
-            </div>
-        </nb-card-body>
-    </nb-card>
-    <div class="button-wrapper">
-        <button nbButton status="primary" class="submit-button">Submit</button>
-    </div>
+                </div>
+            </nb-card-body>
+        </nb-card>
+        <div class="button-wrapper">
+            <button
+                nbButton
+                status="primary"
+                class="submit-button"
+                (click)="handleAnswersSubmit()"
+            >
+                Submit
+            </button>
+        </div>
+    </form>
 </div>
