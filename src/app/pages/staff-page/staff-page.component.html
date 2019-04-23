@@ -15,14 +15,15 @@
             <!--<img alt='notifications' class="notification" src="../../../assets/bell-outline.svg"/>-->
         </button>
     </nb-layout-header>
-    <nb-layout-column *ngIf="currentSubPage === '  Interviews'">
-        <div>ghghghg</div>
+    <nb-layout-column class="body-wrapper">
+        <router-outlet></router-outlet>
     </nb-layout-column>
-
     <nb-sidebar>
         <app-user-sidebar
-            (chosen)="setSubPage($event)"
             [menuList]="menuList"
+            [userInfo]="userInfo"
         ></app-user-sidebar>
     </nb-sidebar>
 </nb-layout>
+
+<!--(chosen)="setSubPage($event)"-->

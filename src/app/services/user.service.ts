@@ -1,14 +1,18 @@
 import { Injectable } from '@angular/core';
 import { UserProfileInterface } from '../interfaces/user-profile-interface';
-import { Observable } from 'rxjs';
+import { Observable, from, forkJoin } from 'rxjs';
 import { HttpHeaders } from '@angular/common/http';
 import { API } from '../config/api.constants';
 import { BackendService } from './backend/backend.service';
 import { UserProfileDetailsInterface } from '../interfaces/user-profile-details-interface';
 import { NotificationInterface } from '../interfaces/notification-interface';
 import { TestInfoInterface } from '../interfaces/test-interface';
-import { TestQuestions } from '../interfaces/test-question-interface';
+import {
+    TestQuestionInterface,
+    TestQuestions,
+} from '../interfaces/test-question-interface';
 import { InterviewInterface } from '../interfaces/interview-interface';
+import { combineAll, concatMap, switchMap, tap, map } from 'rxjs/operators';
 
 @Injectable()
 export class UserService {
@@ -166,6 +170,38 @@ export class UserService {
                 headers,
             }
         );
+    }
+
+    // public getStaffInterviewsList(
+    //     login: string
+    // ): Observable<[InterviewInterface]> {
+    public getStaffInterviewsList(login: string): Observable<any> {
+        if (!login) {
+            login = this.getLocalUserInfo().login;
+        }
+        const headers = new HttpHeaders();
+        headers.append('Content-Type', 'application/json');
+        return this.backend
+            .get$<[InterviewInterface]>(
+                API.STAFF.GET_INTERVIEW_LIST + `?login=${login}`,
+                {
+                    headers,
+                }
+            )
+            .pipe(
+                switchMap(list =>
+                    from(list).pipe(
+                        concatMap((interview: InterviewInterface) =>
+                            forkJoin(
+                                this.getProfileInfo(
+                                    interview.interviewer as string
+                                ),
+                                this.getProfileInfo(interview.student as string)
+                            ).pipe(tap(x => interview))
+                        )
+                    )
+                )
+            );
     }
 
     public createInterview(

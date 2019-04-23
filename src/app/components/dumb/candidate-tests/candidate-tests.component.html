@@ -4,7 +4,7 @@
         *ngFor="let test of tests"
         (click)="openTest(test.test_name)"
     >
-        <nb-card-header>{{ testNamesMap[test.test_name]}}</nb-card-header>
+        <nb-card-header>{{ testNamesMap[test.test_name] }}</nb-card-header>
         <nb-card-body>
             <p><b>Status:</b> {{ test.status }}</p>
             <p><b>Result:</b> {{ test.result }}</p>

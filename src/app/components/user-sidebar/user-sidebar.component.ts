@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { NbMenuItem, NbMenuService } from '@nebular/theme';
 import { UserProfileInterface } from '../../interfaces/user-profile-interface';
 import { Router } from '@angular/router';
+import { UserService } from '../../services/user.service';
 
 @Component({
     selector: 'app-user-sidebar',
@@ -13,22 +14,32 @@ export class UserSidebarComponent implements OnInit {
     @Input() menuList: NbMenuItem[];
     @Input() userInfo: UserProfileInterface;
 
-    constructor(menu: NbMenuService, private router: Router) {
+    constructor(
+        menu: NbMenuService,
+        private router: Router,
+        private userService: UserService
+    ) {
         menu.onItemClick().subscribe(({ item }) => {
             const routes: Record<string, string> = {
                 'Profile information': 'profile',
                 Tests: 'tests',
                 Interviews: 'interviews',
+                '  Interviews': 'interviews',
                 '  Candidates': 'candidates',
                 '  Professors': 'professors',
                 '  Tests': 'tests',
             };
-            if (this.router.url === '/manager') {
-              this.chosen.emit(item.title);
-
-              return;
-            }
-            this.router.navigate([`candidate/${routes[item.title]}`]);
+            this.router.navigate([
+                `${this.userService.getLocalUserInfo().role}/${
+                    routes[item.title]
+                }`,
+            ]);
+            // if (this.router.url === '/manager') {
+            //     this.chosen.emit(item.title);
+            //
+            //     return;
+            // }
+            // this.router.navigate([`candidate/${routes[item.title]}`]);
         });
     }
 
