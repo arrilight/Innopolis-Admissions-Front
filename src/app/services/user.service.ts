@@ -7,12 +7,9 @@ import { BackendService } from './backend/backend.service';
 import { UserProfileDetailsInterface } from '../interfaces/user-profile-details-interface';
 import { NotificationInterface } from '../interfaces/notification-interface';
 import { TestInfoInterface } from '../interfaces/test-interface';
-import {
-    TestQuestionInterface,
-    TestQuestions,
-} from '../interfaces/test-question-interface';
+import { TestQuestions } from '../interfaces/test-question-interface';
 import { InterviewInterface } from '../interfaces/interview-interface';
-import { combineAll, concatMap, switchMap, tap, map } from 'rxjs/operators';
+import { concatMap, switchMap, tap } from 'rxjs/operators';
 
 @Injectable()
 export class UserService {
