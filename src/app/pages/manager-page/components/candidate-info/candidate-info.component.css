@@ -1,0 +1,9 @@
+.card {
+  width: 800px;
+  margin: 10px 20px;
+  flex-shrink: 0;
+}
+
+.submit {
+  margin-top: 16px;
+}

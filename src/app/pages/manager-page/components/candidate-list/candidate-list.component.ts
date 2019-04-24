@@ -3,6 +3,10 @@ import { UserService } from '../../../../services/user/user.service';
 import { UserProfileInterface } from '../../../../interfaces/user-profile-interface';
 import { BehaviorSubject } from 'rxjs';
 import { UserRoles } from '../../../../enums/user-roles.enum';
+import { NbDialogService } from '@nebular/theme';
+import { InterviewInterface } from '../../../../interfaces/interview-interface';
+import { InterviewCardComponent } from '../../../../components/dumb/interview-card/interview-card.component';
+import { CandidateInfoComponent } from '../candidate-info/candidate-info.component';
 
 @Component({
     selector: 'app-candidate-list',
@@ -17,11 +21,17 @@ export class CandidateListComponent implements OnInit {
     public availableStatuses: string[] = [
         this.anyStatus,
         'Registered',
+        'Passing_tests',
         'Passed_tests',
+        'Interview_assigned',
+        'Interviewed',
         'Graded',
     ];
 
-    constructor(private userService: UserService) {}
+    constructor(
+        private userService: UserService,
+        private dialogService: NbDialogService
+    ) {}
 
     ngOnInit(): void {
         this.updateCandidates();
@@ -45,5 +55,14 @@ export class CandidateListComponent implements OnInit {
                 this.candidates = candidates;
                 this.isLoading$.next(false);
             });
+    }
+
+    public openCard(candidate: UserProfileInterface) {
+        this.dialogService.open(CandidateInfoComponent, {
+            hasScroll: true,
+            context: {
+                candidate,
+            },
+        });
     }
 }

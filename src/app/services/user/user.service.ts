@@ -239,11 +239,11 @@ export class UserService {
 
     public getUsers$(
         role: string,
-        status?: string
+        userstatus?: string
     ): Observable<UserProfileInterface[]> {
         const headers = new HttpHeaders();
         const url = `${API.MANAGER.GET_USERS}?role=${role}${
-            status ? `&status=${status}` : ``
+            userstatus ? `&status=${userstatus}` : ``
         }`;
 
         return this.backend
@@ -258,15 +258,38 @@ export class UserService {
                             second_name,
                             date_of_birth,
                             status,
+                            login,
                         }: UserDetailsDtoInterface) => ({
                             name,
                             surname: second_name,
                             role: 'candidate',
                             status,
+                            login,
                         })
                     )
                 )
             );
+    }
+
+    public assignInterview(
+        candidateLogin: string,
+        profLogin: string,
+        date: string
+    ): void {
+        const headers = new HttpHeaders();
+        headers.append('Content-Type', 'application/json');
+        const url = API.MANAGER.INTERVIEW;
+
+        this.backend
+            .post$(url, {
+                body: {
+                    candidate: candidateLogin,
+                    staff_member: profLogin,
+                    date,
+                },
+              headers,
+            })
+            .subscribe();
     }
 
     public saveLocalUserInfo(login, role, token) {

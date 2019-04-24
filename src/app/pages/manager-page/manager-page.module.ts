@@ -6,7 +6,11 @@ import {
   NbSidebarService,
   NbMenuModule,
   NbSelectModule,
-  NbCardModule, NbSpinnerDirective, NbSpinnerComponent, NbBadgeModule,
+  NbCardModule,
+  NbSpinnerDirective,
+  NbSpinnerComponent,
+  NbBadgeModule,
+  NbUserModule, NbRadioModule, NbDatepickerModule,
 } from '@nebular/theme';
 import { NgModule } from '@angular/core';
 import { ManagerPageComponent } from './manager-page.component';
@@ -16,9 +20,16 @@ import { TestPoolComponent } from './components/test-pool/test-pool.component';
 import { ManagerPageRoutingModule } from './manager-page-routing.module';
 import { CandidateListComponent } from './components/candidate-list/candidate-list.component';
 import { CandidateInfoComponent } from './components/candidate-info/candidate-info.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-    declarations: [ManagerPageComponent, TestPoolComponent, CandidateListComponent, NbSpinnerDirective, CandidateInfoComponent],
+    declarations: [
+        ManagerPageComponent,
+        TestPoolComponent,
+        CandidateListComponent,
+        NbSpinnerDirective,
+        CandidateInfoComponent,
+    ],
     imports: [
         ManagerPageRoutingModule,
         NbLayoutModule,
@@ -30,9 +41,14 @@ import { CandidateInfoComponent } from './components/candidate-info/candidate-in
         CommonModule,
         NbSelectModule,
         NbCardModule,
-      NbBadgeModule,
+        NbBadgeModule,
+        NbUserModule,
+        ReactiveFormsModule,
+      NbDatepickerModule.forRoot(),
+      NbRadioModule,
     ],
     exports: [TestPoolComponent, CandidateListComponent],
     providers: [NbSidebarService], // we need this service for the sidebar
+    entryComponents: [CandidateInfoComponent],
 })
 export class ManagerPageModule {}

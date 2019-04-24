@@ -5,4 +5,5 @@ export interface UserProfileInterface {
     photo?: string;
     status?: string;
     progress?: number;
+    login?: string;
 }

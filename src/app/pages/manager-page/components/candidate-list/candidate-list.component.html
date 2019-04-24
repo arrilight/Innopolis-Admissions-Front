@@ -12,7 +12,7 @@
     >
 </nb-select>
 <ng-container *ngIf="!(isLoading$ | async); else loader">
-    <nb-card *ngFor="let candidate of candidates" class="candidate-card">
+    <nb-card *ngFor="let candidate of candidates" (click)="openCard(candidate)" class="candidate-card">
         <nb-card-body>
             {{ candidate.name }} {{ candidate.surname }}
             <nb-badge text="{{ candidate.status }}"></nb-badge>

@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { UserProfileInterface } from '../../../interfaces/user-profile-interface';
 import { InterviewInterface } from '../../../interfaces/interview-interface';
 import { FormControl, FormGroup } from '@angular/forms';
 import { NbDialogRef } from '@nebular/theme';
