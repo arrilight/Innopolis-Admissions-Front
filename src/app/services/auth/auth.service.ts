@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { HttpHeaders, HttpResponse } from '@angular/common/http';
 import { BackendService } from '../backend/backend.service';
 import { API } from '../../config/api.constants';
-import { UserService } from '../user.service';
+import { UserService } from '../user/user.service';
 import { RegistrationDataInterface } from '../../interfaces/registration-data-interface';
 
 @Injectable()

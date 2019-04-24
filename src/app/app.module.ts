@@ -26,7 +26,7 @@ import { StaffPageModule } from './pages/staff-page/staff-page.module';
 import { BackendService } from './services/backend/backend.service';
 import { AuthService } from './services/auth/auth.service';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
-import { UserService } from './services/user.service';
+import { UserService } from './services/user/user.service';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { ReactiveFormsModule } from '@angular/forms';
 

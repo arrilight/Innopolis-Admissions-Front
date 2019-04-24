@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { InterviewInterface } from '../../../interfaces/interview-interface';
-import { UserService } from '../../../services/user.service';
+import { UserService } from '../../../services/user/user.service';
 
 @Component({
     selector: 'app-candidate-interviews',

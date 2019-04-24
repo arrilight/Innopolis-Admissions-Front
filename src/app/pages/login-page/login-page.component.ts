@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth/auth.service';
-import { UserService } from '../../services/user.service';
+import { UserService } from '../../services/user/user.service';
 import { RegistrationDataInterface } from '../../interfaces/registration-data-interface';
 
 @Component({

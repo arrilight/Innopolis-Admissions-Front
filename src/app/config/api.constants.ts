@@ -50,12 +50,14 @@ export class API {
     public static get MANAGER(): {
         UPDATE_STATUS: string;
         INTERVIEW: string;
+        GET_USERS: string;
     } {
         const baseUrl = `${this.MAIN}/managers`;
 
         return {
             UPDATE_STATUS: `${baseUrl}/updateStatus`,
             INTERVIEW: `${baseUrl}/interview`,
+            GET_USERS: `${baseUrl}/users`
         };
     }
 

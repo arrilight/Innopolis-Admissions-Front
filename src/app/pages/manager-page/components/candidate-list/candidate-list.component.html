@@ -1,0 +1,25 @@
+<h3>List of candidates</h3>
+<nb-select
+    placeholder="Select status"
+    [selected]="selectedStatus"
+    (selectedChange)="filterResults($event)"
+    class="status-selector"
+>
+    <nb-option
+        *ngFor="let status of availableStatuses"
+        value="{{ status.toLowerCase() }}"
+        >{{ status }}</nb-option
+    >
+</nb-select>
+<ng-container *ngIf="!(isLoading$ | async); else loader">
+    <nb-card *ngFor="let candidate of candidates" class="candidate-card">
+        <nb-card-body>
+            {{ candidate.name }} {{ candidate.surname }}
+            <nb-badge text="{{ candidate.status }}"></nb-badge>
+        </nb-card-body>
+    </nb-card>
+</ng-container>
+
+<ng-template #loader>
+    loading...
+</ng-template>

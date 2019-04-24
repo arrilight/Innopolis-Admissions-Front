@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NbDialogService, NbMenuItem } from '@nebular/theme';
-import { UserService } from '../../services/user.service';
+import { UserService } from '../../services/user/user.service';
 import { UserProfileInterface } from '../../interfaces/user-profile-interface';
 import { InterviewCardComponent } from '../../components/dumb/interview-card/interview-card.component';
 

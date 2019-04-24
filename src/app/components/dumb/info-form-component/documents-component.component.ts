@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
-import { UserService } from '../../../services/user.service';
+import { UserService } from '../../../services/user/user.service';
 import { UserProfileInterface } from '../../../interfaces/user-profile-interface';
 import { UserProfileDetailsInterface } from '../../../interfaces/user-profile-details-interface';
 import { forkJoin } from 'rxjs';

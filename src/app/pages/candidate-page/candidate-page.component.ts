@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NbMenuItem } from '@nebular/theme';
-import { UserService } from '../../services/user.service';
+import { UserService } from '../../services/user/user.service';
 import { UserProfileInterface } from '../../interfaces/user-profile-interface';
 
 @Component({

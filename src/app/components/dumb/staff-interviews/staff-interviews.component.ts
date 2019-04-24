@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../../../services/user.service';
+import { UserService } from '../../../services/user/user.service';
 import { InterviewInterface } from '../../../interfaces/interview-interface';
 import { NbDialogRef, NbDialogService } from '@nebular/theme';
 import { InterviewCardComponent } from '../interview-card/interview-card.component';
-import { UserProfileInterface } from '../../../interfaces/user-profile-interface';
 
 @Component({
     selector: 'app-staff-interviews',
@@ -28,11 +27,7 @@ export class StaffInterviewsComponent implements OnInit {
     grade(login: string, grade: string) {
         console.warn('grading ');
         this.userService
-            .gradeStudent(login, grade)
-            .subscribe(
-                success => console.warn(success),
-                error1 => console.warn(error1)
-            );
+            .gradeStudent(login, grade);
     }
 
     openCard(interview: InterviewInterface) {

@@ -15,6 +15,8 @@ import {
     NbButtonModule,
     NbDialogService,
     NbDialogRef,
+    NbSpinnerModule,
+    NbBadgeModule,
 } from '@nebular/theme';
 import { DocumentsComponentComponent } from './dumb/info-form-component/documents-component.component';
 import { NbInputModule } from '@nebular/theme';
@@ -23,7 +25,7 @@ import { CandidateInterviewsComponent } from './dumb/candidate-interviews/candid
 import { TestComponent } from './dumb/test/test.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { StaffInterviewsComponent } from './dumb/staff-interviews/staff-interviews.component';
-import { UserService } from '../services/user.service';
+import { UserService } from '../services/user/user.service';
 import { InterviewCardComponent } from './dumb/interview-card/interview-card.component';
 
 // @ts-ignore
@@ -48,6 +50,7 @@ import { InterviewCardComponent } from './dumb/interview-card/interview-card.com
         NbButtonModule,
         NbSidebarModule,
         NbInputModule,
+        NbCardModule,
         NbProgressBarModule,
         NbSelectModule,
         NbRadioModule,

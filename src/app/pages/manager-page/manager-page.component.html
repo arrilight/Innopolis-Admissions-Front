@@ -15,48 +15,51 @@
             <!--<img alt='notifications' class="notification" src="../../../assets/bell-outline.svg"/>-->
         </button>
     </nb-layout-header>
-    <nb-layout-column *ngIf="currentSubPage === '  Tests'">
-        <h1>Test pull</h1>
-        <nb-card class="card" *ngFor="let test of testsInPull">
-            <nb-card-header>{{ test.title }}</nb-card-header>
-            <nb-card-body>
-                <p><b>Status:</b> {{ test.status }}</p>
-                <p><b>Result:</b> {{ test.result }}</p>
-            </nb-card-body>
-        </nb-card>
-        <div class="column-footer">
-            <p>Add file</p>
-            <input nbInput type="file" placeholder="Add test" />
-        </div>
-    </nb-layout-column>
-    <nb-layout-column *ngIf="currentSubPage === '  Tests'">
-        <h1>Assigned tests</h1>
-        <nb-card class="card" *ngFor="let test of assignedTests">
-            <nb-card-header>{{ test.title }}</nb-card-header>
-            <nb-card-body>
-                <p><b>Status:</b> {{ test.status }}</p>
-                <p><b>Result:</b> {{ test.result }}</p>
-            </nb-card-body>
-        </nb-card>
-        <div class="column-footer">
-            <nb-select class="program-select" placeholder="Select Program">
-                <nb-option value="1">Bachelor</nb-option>
-                <nb-option value="2">Masters</nb-option>
-            </nb-select>
-            <button
-                nbButton
-                outline
-                status="primary"
-                size="small"
-                [nbContextMenu]="testsInPull"
-                nbContextMenuPlacement="right"
-                nbContextMenuTrigger="click"
-                class="add-button"
-            >
-                +
-            </button>
-        </div>
-    </nb-layout-column>
+    <!--<nb-layout-column *ngIf="currentSubPage === '  Tests'">-->
+        <!--<h1>Test pull</h1>-->
+        <!--<nb-card class="card" *ngFor="let test of testsInPull">-->
+            <!--<nb-card-header>{{ test.title }}</nb-card-header>-->
+            <!--<nb-card-body>-->
+                <!--<p><b>Status:</b> {{ test.status }}</p>-->
+                <!--<p><b>Result:</b> {{ test.result }}</p>-->
+            <!--</nb-card-body>-->
+        <!--</nb-card>-->
+        <!--<div class="column-footer">-->
+            <!--<p>Add file</p>-->
+            <!--<input nbInput type="file" placeholder="Add test" />-->
+        <!--</div>-->
+    <!--</nb-layout-column>-->
+    <!--<nb-layout-column *ngIf="currentSubPage === '  Tests'">-->
+        <!--<h1>Assigned tests</h1>-->
+        <!--<nb-card class="card" *ngFor="let test of assignedTests">-->
+            <!--<nb-card-header>{{ test.title }}</nb-card-header>-->
+            <!--<nb-card-body>-->
+                <!--<p><b>Status:</b> {{ test.status }}</p>-->
+                <!--<p><b>Result:</b> {{ test.result }}</p>-->
+            <!--</nb-card-body>-->
+        <!--</nb-card>-->
+        <!--<div class="column-footer">-->
+            <!--<nb-select class="program-select" placeholder="Select Program">-->
+                <!--<nb-option value="1">Bachelor</nb-option>-->
+                <!--<nb-option value="2">Masters</nb-option>-->
+            <!--</nb-select>-->
+            <!--<button-->
+                <!--nbButton-->
+                <!--outline-->
+                <!--status="primary"-->
+                <!--size="small"-->
+                <!--[nbContextMenu]="testsInPull"-->
+                <!--nbContextMenuPlacement="right"-->
+                <!--nbContextMenuTrigger="click"-->
+                <!--class="add-button"-->
+            <!--&gt;-->
+                <!--+-->
+            <!--</button>-->
+        <!--</div>-->
+    <!--</nb-layout-column>-->
+  <nb-layout-column class="body-wrapper">
+    <router-outlet></router-outlet>
+  </nb-layout-column>
 
     <nb-sidebar>
         <app-user-sidebar

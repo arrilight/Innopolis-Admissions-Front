@@ -2,7 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { NbMenuItem, NbMenuService } from '@nebular/theme';
 import { UserProfileInterface } from '../../interfaces/user-profile-interface';
 import { Router } from '@angular/router';
-import { UserService } from '../../services/user.service';
+import { UserService } from '../../services/user/user.service';
 
 @Component({
     selector: 'app-user-sidebar',

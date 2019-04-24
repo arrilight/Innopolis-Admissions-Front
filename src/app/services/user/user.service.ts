@@ -1,16 +1,16 @@
 import { Injectable } from '@angular/core';
-import { UserProfileInterface } from '../interfaces/user-profile-interface';
+import { UserProfileInterface } from '../../interfaces/user-profile-interface';
 import { Observable, from, forkJoin } from 'rxjs';
 import { HttpHeaders } from '@angular/common/http';
-import { API } from '../config/api.constants';
-import { BackendService } from './backend/backend.service';
-import { UserProfileDetailsInterface } from '../interfaces/user-profile-details-interface';
-import { NotificationInterface } from '../interfaces/notification-interface';
-import { TestInfoInterface } from '../interfaces/test-interface';
-import { TestQuestions } from '../interfaces/test-question-interface';
-import { InterviewInterface } from '../interfaces/interview-interface';
+import { API } from '../../config/api.constants';
+import { BackendService } from '../backend/backend.service';
+import { UserProfileDetailsInterface } from '../../interfaces/user-profile-details-interface';
+import { NotificationInterface } from '../../interfaces/notification-interface';
+import { TestInfoInterface } from '../../interfaces/test-interface';
+import { TestQuestions } from '../../interfaces/test-question-interface';
+import { InterviewInterface } from '../../interfaces/interview-interface';
 import { concatMap, map, switchMap, tap } from 'rxjs/operators';
-import * as moment from 'moment';
+import { UserDetailsDtoInterface } from './dto/user-details-dto.interface';
 
 @Injectable()
 export class UserService {
@@ -225,13 +225,47 @@ export class UserService {
         );
     }
 
-    public gradeStudent(login: string, grade: string) {
+    public gradeStudent(login: string, grade: string): void {
         const headers = new HttpHeaders();
         headers.append('Content-Type', 'application/json');
-        return this.backend.post$<any>(API.STAFF.GRADE, {
-            body: { student_login: login, grade },
-            headers,
-        });
+        this.backend
+            .post$<any>(API.STAFF.GRADE, {
+                body: { student_login: login, grade },
+                headers,
+            })
+            .subscribe();
+    }
+
+    public getUsers$(
+        role: string,
+        status?: string
+    ): Observable<UserProfileInterface[]> {
+        const headers = new HttpHeaders();
+        const url = `${API.MANAGER.GET_USERS}?role=${role}${
+            status ? `&status=${status}` : ``
+        }`;
+
+        return this.backend
+            .get$<UserDetailsDtoInterface[]>(url, {
+                headers,
+            })
+            .pipe(
+                map((users: UserDetailsDtoInterface[]) =>
+                    users.map(
+                        ({
+                            name,
+                            second_name,
+                            date_of_birth,
+                            status,
+                        }: UserDetailsDtoInterface) => ({
+                            name,
+                            surname: second_name,
+                            role: 'candidate',
+                            status,
+                        })
+                    )
+                )
+            );
     }
 
     public saveLocalUserInfo(login, role, token) {

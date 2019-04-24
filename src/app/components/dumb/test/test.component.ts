@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TestQuestions } from '../../../interfaces/test-question-interface';
-import { UserService } from '../../../services/user.service';
+import { UserService } from '../../../services/user/user.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({

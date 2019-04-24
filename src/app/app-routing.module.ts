@@ -9,6 +9,7 @@ import { TestComponent } from './components/dumb/test/test.component';
 import { DocumentsComponentComponent } from './components/dumb/info-form-component/documents-component.component';
 import { CandidateInterviewsComponent } from './components/dumb/candidate-interviews/candidate-interviews.component';
 import { StaffInterviewsComponent } from './components/dumb/staff-interviews/staff-interviews.component';
+import { CandidateListComponent } from './pages/manager-page/components/candidate-list/candidate-list.component';
 
 const routes: Routes = [
     { path: '', component: LoginPageComponent },
@@ -23,7 +24,7 @@ const routes: Routes = [
             { path: 'interviews', component: CandidateInterviewsComponent },
         ],
     },
-    { path: 'manager', component: ManagerPageComponent },
+    { path: 'manager', component: ManagerPageComponent, children: [{ path: 'candidates', component: CandidateListComponent }]},
     {
         path: 'staff_member',
         component: StaffPageComponent,

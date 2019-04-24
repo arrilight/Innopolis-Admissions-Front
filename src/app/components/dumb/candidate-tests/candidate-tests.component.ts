@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../../../services/user.service';
 import { Router } from '@angular/router';
 import { TestInfoInterface } from '../../../interfaces/test-interface';
+import { UserService } from '../../../services/user/user.service';
 
 @Component({
     selector: 'app-candidate-tests',

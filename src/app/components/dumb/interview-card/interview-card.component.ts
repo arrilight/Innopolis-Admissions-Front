@@ -3,7 +3,7 @@ import { UserProfileInterface } from '../../../interfaces/user-profile-interface
 import { InterviewInterface } from '../../../interfaces/interview-interface';
 import { FormControl, FormGroup } from '@angular/forms';
 import { NbDialogRef } from '@nebular/theme';
-import { UserService } from '../../../services/user.service';
+import { UserService } from '../../../services/user/user.service';
 
 @Component({
     selector: 'app-interview-card',
