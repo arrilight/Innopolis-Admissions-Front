@@ -15,9 +15,10 @@ import { CommonModule } from '@angular/common';
 import { TestPoolComponent } from './components/test-pool/test-pool.component';
 import { ManagerPageRoutingModule } from './manager-page-routing.module';
 import { CandidateListComponent } from './components/candidate-list/candidate-list.component';
+import { CandidateInfoComponent } from './components/candidate-info/candidate-info.component';
 
 @NgModule({
-    declarations: [ManagerPageComponent, TestPoolComponent, CandidateListComponent, NbSpinnerDirective],
+    declarations: [ManagerPageComponent, TestPoolComponent, CandidateListComponent, NbSpinnerDirective, CandidateInfoComponent],
     imports: [
         ManagerPageRoutingModule,
         NbLayoutModule,

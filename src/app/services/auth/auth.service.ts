@@ -6,6 +6,7 @@ import { BackendService } from '../backend/backend.service';
 import { API } from '../../config/api.constants';
 import { UserService } from '../user/user.service';
 import { RegistrationDataInterface } from '../../interfaces/registration-data-interface';
+import { AuthResponseInterface } from './dto/auth.dto';
 
 @Injectable()
 export class AuthService {

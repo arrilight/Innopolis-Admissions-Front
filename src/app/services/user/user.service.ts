@@ -11,6 +11,7 @@ import { TestQuestions } from '../../interfaces/test-question-interface';
 import { InterviewInterface } from '../../interfaces/interview-interface';
 import { concatMap, map, switchMap, tap } from 'rxjs/operators';
 import { UserDetailsDtoInterface } from './dto/user-details-dto.interface';
+import { LocalUserInfoInterface } from '../../interfaces/local-user-info-interface';
 
 @Injectable()
 export class UserService {
