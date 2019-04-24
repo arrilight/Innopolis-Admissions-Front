@@ -27,11 +27,19 @@
             >
         </nb-select>
 
-      <h4>Date:</h4>
-      <div>
-        <input formControlName="date" nbInput placeholder="Date of the interview" [nbDatepicker]="datepicker">
-      </div>
-      <nb-datepicker #datepicker></nb-datepicker>
-        <button class="submit" nbButton (click)="assignInterview()">Submit</button>
+        <h4>Date:</h4>
+        <div>
+            <input
+                [nbDatepicker]="datepicker"
+                nbInput
+                size="medium"
+                formControlName="date"
+                placeholder="Date of the interview"
+            />
+        </div>
+        <nb-datepicker #datepicker></nb-datepicker>
+        <button class="submit" nbButton (click)="assignInterview()">
+            Submit
+        </button>
     </nb-card-body>
 </nb-card>
