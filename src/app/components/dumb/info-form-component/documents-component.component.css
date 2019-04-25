@@ -1,0 +1,21 @@
+.container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 20px;
+}
+
+input {
+    margin: 10px 0;
+    width: 300px;
+}
+
+.select {
+    margin: 10px 0;
+    width: 300px;
+}
+
+.button-wrapper {
+    display: flex;
+    justify-content: center;
+}

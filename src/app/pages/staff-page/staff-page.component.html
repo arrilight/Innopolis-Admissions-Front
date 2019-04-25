@@ -1,0 +1,29 @@
+<nb-layout>
+    <nb-layout-header>
+        Logo
+        <button
+            nbButton
+            outline
+            status="primary"
+            size="small"
+            [nbContextMenu]="items"
+            nbContextMenuPlacement="right"
+            nbContextMenuTrigger="click"
+            class="notification"
+        >
+            Notifications
+            <!--<img alt='notifications' class="notification" src="../../../assets/bell-outline.svg"/>-->
+        </button>
+    </nb-layout-header>
+    <nb-layout-column class="body-wrapper">
+        <router-outlet></router-outlet>
+    </nb-layout-column>
+    <nb-sidebar>
+        <app-user-sidebar
+            [menuList]="menuList"
+            [userInfo]="userInfo"
+        ></app-user-sidebar>
+    </nb-sidebar>
+</nb-layout>
+
+<!--(chosen)="setSubPage($event)"-->

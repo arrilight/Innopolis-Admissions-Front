@@ -1,0 +1,65 @@
+<nb-card class="card">
+    <nb-card-header>
+        <div>
+            Interview ({{
+                interview.date.getFullYear() +
+                    '.' +
+                    interview.date.getMonth() +
+                    '.' +
+                    interview.date.getDay()
+            }})
+
+            <div style="height: 20px"></div>
+            <nb-user
+                color="#cccccc"
+                name="{{
+                    interview.student.name + ' ' + interview.student.surname
+                }}"
+                picture="{{ interview.student.photo }}"
+                size="xlarge"
+                title="{{ interview.student.status }}"
+            >
+            </nb-user>
+        </div>
+    </nb-card-header>
+    <nb-card-body [formGroup]="formGroup">
+        <h3>Evaluation:</h3>
+        <h4>1. Motivation</h4>
+        <nb-select
+            class="select"
+            placeholder="Select motivation"
+            style="width: 200px"
+        >
+            <nb-option>Business</nb-option>
+            <nb-option>Social</nb-option>
+            <nb-option>Technology</nb-option>
+        </nb-select>
+        <h4>2. General CS knowledge</h4>
+        <nb-radio-group name="generalGrade">
+            <nb-radio>1</nb-radio>
+            <nb-radio>2</nb-radio>
+            <nb-radio>3</nb-radio>
+            <nb-radio>4</nb-radio>
+            <nb-radio>5</nb-radio>
+        </nb-radio-group>
+        <h4>3. Advanced CS knowledge</h4>
+        <nb-radio-group name="advancedGrade">
+            <nb-radio>1</nb-radio>
+            <nb-radio>2</nb-radio>
+            <nb-radio>3</nb-radio>
+            <nb-radio>4</nb-radio>
+            <nb-radio>5</nb-radio>
+        </nb-radio-group>
+        <h4>4. Comments</h4>
+        <textarea nbInput fullWidth placeholder="Full width"></textarea>
+        <h4>5. Final mark</h4>
+        <nb-radio-group style="" formControlName="grade">
+            <nb-radio value="P">Passed</nb-radio>
+            <nb-radio value="F">Not Passed</nb-radio>
+        </nb-radio-group>
+    </nb-card-body>
+    <nb-card-footer>
+        <button nbButton (click)="dialogRef.close()">Close Dialog</button>
+        <button nbButton (click)="submit()">Grade</button>
+    </nb-card-footer>
+</nb-card>

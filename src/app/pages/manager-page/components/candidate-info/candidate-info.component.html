@@ -1,0 +1,45 @@
+<nb-card [formGroup]="formGroup" class="card">
+    <nb-card-header>
+        <div>
+            <div style="height: 20px"></div>
+            <nb-user
+                color="#cccccc"
+                name="{{ candidate.name + ' ' + candidate.surname }}"
+                size="xlarge"
+                title="{{ candidate.status }}"
+            >
+            </nb-user>
+        </div>
+    </nb-card-header>
+    <nb-card-body>
+        <h3>Assign interview</h3>
+        <h4>Staff member:</h4>
+        <nb-select
+            formControlName="professor"
+            class="select"
+            placeholder="Professor"
+            style="width: 350px"
+        >
+            <nb-option
+                *ngFor="let professor of professors"
+                value="{{ professor.login }}"
+                >{{ professor.name }} {{ professor.surname }}</nb-option
+            >
+        </nb-select>
+
+        <h4>Date:</h4>
+        <div>
+            <input
+                [nbDatepicker]="datepicker"
+                nbInput
+                size="medium"
+                formControlName="date"
+                placeholder="Date of the interview"
+            />
+        </div>
+        <nb-datepicker #datepicker></nb-datepicker>
+        <button class="submit" nbButton (click)="assignInterview()">
+            Submit
+        </button>
+    </nb-card-body>
+</nb-card>

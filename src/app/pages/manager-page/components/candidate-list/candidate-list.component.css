@@ -1,0 +1,8 @@
+.status-selector {
+  width: 200px;
+  margin-bottom: 16px;
+}
+
+.candidate-card:hover {
+  cursor: pointer;
+}
