@@ -23,7 +23,9 @@ export class CandidateTestsComponent implements OnInit {
         this.userService
             .getTestsInfo(this.userService.getLocalUserInfo().login)
             .subscribe(
-                tests => (this.tests = tests),
+                tests => {
+                    this.tests = tests;
+                },
                 error => console.log('error while loading tests: ', error)
             );
     }

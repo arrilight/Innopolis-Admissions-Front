@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NbMenuItem } from '@nebular/theme';
+import { UserProfileInterface } from '../../interfaces/user-profile-interface';
+import { UserService } from '../../services/user/user.service';
 
 @Component({
     selector: 'app-manager-page',
@@ -44,9 +46,20 @@ export class ManagerPageComponent implements OnInit {
 
     currentSubPage = '  Candidates';
 
-    constructor() {}
+    userInfo: UserProfileInterface;
 
-    ngOnInit() {}
+    constructor(private userService: UserService) {}
+
+    ngOnInit() {
+        this.userService
+            .getProfileInfo(this.userService.getLocalUserInfo().login)
+            .subscribe(
+                userInfo =>
+                    (this.userInfo = {
+                        ...userInfo,
+                    })
+            );
+    }
 
     setSubPage(name: string) {
         this.currentSubPage = name;

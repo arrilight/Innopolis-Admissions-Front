@@ -115,7 +115,7 @@ export class UserService {
         );
     }
 
-    public getTestsInfo(login: string): Observable<[TestInfoInterface]> {
+    public getTestsInfo(login: string): Observable<TestInfoInterface[]> {
         if (!login) {
             login = this.getLocalUserInfo().login;
         }
