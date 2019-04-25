@@ -4,5 +4,5 @@ export interface InterviewInterface {
     interviewer: UserProfileInterface | string;
     date: Date;
     new: string;
-    student?: UserProfileInterface | string;
+    student?: UserProfileInterface;
 }

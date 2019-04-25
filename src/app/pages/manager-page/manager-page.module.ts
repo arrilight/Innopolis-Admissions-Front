@@ -27,7 +27,6 @@ import { ReactiveFormsModule } from '@angular/forms';
         ManagerPageComponent,
         TestPoolComponent,
         CandidateListComponent,
-        NbSpinnerDirective,
         CandidateInfoComponent,
     ],
     imports: [

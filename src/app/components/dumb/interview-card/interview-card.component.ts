@@ -14,7 +14,7 @@ export class InterviewCardComponent implements OnInit {
     @Input() grade?: (login: string, grade: string) => void;
     public formGroup: FormGroup;
     constructor(
-        protected dialogRef: NbDialogRef<InterviewCardComponent>,
+        public dialogRef: NbDialogRef<InterviewCardComponent>,
         private userService: UserService
     ) {}
 
